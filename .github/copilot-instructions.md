@@ -1,5 +1,5 @@
 ---
-description: ECDX knowledge base for Power Platform: practices, setup, and packages
+description: "ECDX knowledge base for Power Platform: practices, setup, and packages"
 applyTo: "**"
 ---
 

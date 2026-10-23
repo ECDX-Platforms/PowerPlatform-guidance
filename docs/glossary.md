@@ -1,6 +1,6 @@
 ---
 title: Glossary
-description: Shared terminology for Power Platform work: ALM, solutions, Dataverse, security, DLP, and governance terms
+description: "Shared terminology for Power Platform work: ALM, solutions, Dataverse, security, DLP, and governance terms"
 type: reference
 tags: [glossary, terminology, alm, dataverse, dlp, governance, security]
 last_reviewed: 2026-10-23

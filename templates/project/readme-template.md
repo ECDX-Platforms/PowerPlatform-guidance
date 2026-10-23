@@ -1,6 +1,6 @@
 ---
 title: <Project Name>
-description: Project README template: copy and fill in every placeholder
+description: "Project README template: copy and fill in every placeholder"
 type: template
 ---
 

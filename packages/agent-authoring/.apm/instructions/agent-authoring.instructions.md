@@ -1,5 +1,5 @@
 ---
-description: Copilot Studio agent rules: authentication baseline, channel and sharing policy, data boundaries, transcripts, and release checks
+description: "Copilot Studio agent rules: authentication baseline, channel and sharing policy, data boundaries, transcripts, and release checks"
 applyTo: "**"
 ---
 

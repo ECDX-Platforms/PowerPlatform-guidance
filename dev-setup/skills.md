@@ -1,6 +1,6 @@
 ---
 title: Agent Skills and Plugins
-description: The Microsoft Power Platform plugin marketplace: every plugin, what it needs, how to install it, and which one to reach for
+description: "The Microsoft Power Platform plugin marketplace: every plugin, what it needs, how to install it, and which one to reach for"
 type: reference
 tags: [skills, plugins, power-platform-skills, dataverse-skills, copilot, claude, scaffolding, marketplace]
 last_reviewed: 2026-10-23

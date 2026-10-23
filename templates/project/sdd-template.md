@@ -1,6 +1,6 @@
 ---
 title: <Project Name> SDD
-description: Solution design document template: components, data model, security, environments, and how it is operated
+description: "Solution design document template: components, data model, security, environments, and how it is operated"
 type: template
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Templates
-description: Boilerplate for new work: the project scaffold and the release pipeline
+description: "Boilerplate for new work: the project scaffold and the release pipeline"
 type: index
 ---
 

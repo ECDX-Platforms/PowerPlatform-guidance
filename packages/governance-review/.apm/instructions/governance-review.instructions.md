@@ -1,5 +1,5 @@
 ---
-description: Governance review posture: read-only by default, findings tied to the item they came from, evidence over opinion
+description: "Governance review posture: read-only by default, findings tied to the item they came from, evidence over opinion"
 applyTo: "**"
 ---
 

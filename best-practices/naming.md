@@ -1,6 +1,6 @@
 ---
 title: Naming Standards
-description: Naming conventions for every Power Platform artifact: environments, solutions, tables, apps, flows, groups, identities, and branches
+description: "Naming conventions for every Power Platform artifact: environments, solutions, tables, apps, flows, groups, identities, and branches"
 type: practice
 tags: [naming, environments, solutions, dataverse, apps, flows, security-roles, groups, agents, azure-devops]
 last_reviewed: 2026-10-23

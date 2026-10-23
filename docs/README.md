@@ -1,6 +1,6 @@
 ---
 title: Documentation
-description: Glossary, API reference, how-to guides, and the scope statement: the explanatory half of the knowledge base
+description: "Glossary, API reference, how-to guides, and the scope statement: the explanatory half of the knowledge base"
 type: index
 ---
 

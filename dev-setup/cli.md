@@ -1,6 +1,6 @@
 ---
 title: CLIs
-description: pac and pa: two different Microsoft CLIs, what each is for, and how to install them
+description: "pac and pa: two different Microsoft CLIs, what each is for, and how to install them"
 type: guide
 tags: [pac, pa, power-platform-cli, power-apps-cli, install]
 last_reviewed: 2026-10-23

@@ -16,7 +16,7 @@
 
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { ROOT, listDocs, readDoc, rel, headings, validateFrontmatter, FRONTMATTER_EXEMPT, VALID_TYPES } from "./lib.mjs";
+import { ROOT, listDocs, readDoc, rel, headings, validateFrontmatter, FRONTMATTER_EXEMPT, VALID_TYPES, yamlSafetyIssues } from "./lib.mjs";
 import { existsSync } from "node:fs";
 import { renderIndex } from "./build-index.mjs";
 
@@ -53,7 +53,10 @@ for (const doc of docs) {
     errors.push(...validateFrontmatter(doc.data, doc.file));
   }
 
-  // 2. body must not duplicate the review date
+  // 2. frontmatter must be YAML a real parser will accept, not just what our parser tolerates
+  errors.push(...yamlSafetyIssues(doc.text, doc.file));
+
+  // 3. body must not duplicate the review date
   const bodyLines = doc.body.split("\n");
   bodyLines.forEach((line, i) => {
     if (/^Last reviewed:/i.test(line.trim())) {
@@ -64,7 +67,7 @@ for (const doc of docs) {
     }
   });
 
-  // 3. internal links and anchors
+  // 4. internal links and anchors
   const text = doc.body.replace(/```[\s\S]*?```/g, "");
   const linkRe = /\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
   let m;

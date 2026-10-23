@@ -1,6 +1,6 @@
 ---
 title: AI Agents and Copilot Studio
-description: Rules for Copilot Studio agents and embedded AI features: authentication, channels, sharing, knowledge sources, transcripts, telemetry, responsible use
+description: "Rules for Copilot Studio agents and embedded AI features: authentication, channels, sharing, knowledge sources, transcripts, telemetry, responsible use"
 type: practice
 tags: [copilot-studio, ai-agents, responsible-ai, authentication, channels, knowledge-sources, transcripts, capacity]
 last_reviewed: 2026-10-23

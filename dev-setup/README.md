@@ -1,6 +1,6 @@
 ---
 title: Developer Setup
-description: Getting a workstation ready for Power Platform work: editor, CLIs, MCP servers and agent skills, in the order you need them
+description: "Getting a workstation ready for Power Platform work: editor, CLIs, MCP servers and agent skills, in the order you need them"
 type: index
 ---
 

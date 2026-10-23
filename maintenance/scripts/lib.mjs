@@ -128,6 +128,39 @@ export function sections(text) {
   });
 }
 
+/**
+ * Catch frontmatter that the naive parser tolerates but a real YAML parser rejects. The important
+ * case is an unquoted value containing ": ", which YAML reads as a nested mapping and which editors
+ * and Git hosts reject outright.
+ */
+export function yamlSafetyIssues(text, file) {
+  if (!text.startsWith("---\n")) return [];
+  const end = text.indexOf("\n---", 3);
+  if (end === -1) return [];
+  const issues = [];
+  const lines = text.slice(4, end).split("\n");
+  lines.forEach((line, i) => {
+    const m = /^([A-Za-z_][\w-]*):\s(.*)$/.exec(line);
+    if (!m) return;
+    const value = m[2];
+    const lineNo = i + 2;
+    if (value === "") return;
+    if (value.startsWith('"') || value.startsWith("'")) return;
+    if (value.includes(": ")) {
+      issues.push(
+        `${file}:${lineNo}: unquoted "${m[1]}" contains ": ", which YAML reads as a nested mapping. Quote the value`,
+      );
+    }
+    if (/\s#/.test(value)) {
+      issues.push(`${file}:${lineNo}: unquoted "${m[1]}" contains " #", which YAML reads as a comment. Quote the value`);
+    }
+    if (value.startsWith("[") && !value.endsWith("]")) {
+      issues.push(`${file}:${lineNo}: "${m[1]}" starts a list but does not close it`);
+    }
+  });
+  return issues;
+}
+
 /** APM primitives carry a skill/instruction frontmatter shape, not the doc shape. */
 export function primitiveKind(file) {
   if (!file.includes(".apm/")) return null;

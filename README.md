@@ -1,6 +1,6 @@
 ---
 title: ECDX
-description: A working knowledge base for Power Platform: what tends to work, why, and the setup and decision guides that go with it
+description: "A working knowledge base for Power Platform: what tends to work, why, and the setup and decision guides that go with it"
 type: meta
 ---
 

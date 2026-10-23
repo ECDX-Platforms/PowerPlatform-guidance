@@ -1,6 +1,6 @@
 ---
 title: Testing
-description: How to test Power Platform work: what each level covers, where evidence lives, and how to test things that resist automation
+description: "How to test Power Platform work: what each level covers, where evidence lives, and how to test things that resist automation"
 type: guide
 tags: [testing, smoke, regression, playwright, uat, evidence, plugins]
 last_reviewed: 2026-10-23

@@ -1,6 +1,6 @@
 ---
 title: Choosing Where Logic Lives
-description: Decision guide for implementing business logic in Dataverse: business rule, calculated or rollup column, low-code plug-in, JavaScript, command, cloud flow, or C# plug-in
+description: "Decision guide for implementing business logic in Dataverse: business rule, calculated or rollup column, low-code plug-in, JavaScript, command, cloud flow, or C# plug-in"
 type: guide
 tags: [business-rules, plugins, javascript, power-automate, calculated-columns, rollup, power-fx, custom-api, decision]
 last_reviewed: 2026-10-23

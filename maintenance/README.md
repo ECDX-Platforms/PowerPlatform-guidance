@@ -1,6 +1,6 @@
 ---
 title: Maintenance
-description: Repo upkeep: the validation scripts and the rules for changing the knowledge base structure
+description: "Repo upkeep: the validation scripts and the rules for changing the knowledge base structure"
 type: meta
 ---
 

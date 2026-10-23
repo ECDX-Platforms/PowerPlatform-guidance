@@ -1,6 +1,6 @@
 ---
 title: <Project Name> PDD
-description: Product design document template: the problem, the users, and what done means
+description: "Product design document template: the problem, the users, and what done means"
 type: template
 ---
 

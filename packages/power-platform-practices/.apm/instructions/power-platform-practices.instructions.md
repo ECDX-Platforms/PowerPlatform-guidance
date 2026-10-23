@@ -1,5 +1,5 @@
 ---
-description: ECDX Power Platform practices: environments, ALM, naming, security and a release checklist
+description: "ECDX Power Platform practices: environments, ALM, naming, security and a release checklist"
 applyTo: "**"
 ---
 
