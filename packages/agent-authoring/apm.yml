@@ -1,0 +1,21 @@
+name: agent-authoring
+version: 0.1.0
+description: Build and review Copilot Studio agents to ECDX standards — authentication, channels, sharing, knowledge sources, transcripts, and the pre-release checklist
+author: ECDX platform team
+license: MIT
+
+targets:
+  - copilot
+  - claude
+
+includes: auto
+
+dependencies:
+  mcp:
+    # The Copilot Studio MCP server. stdio: the client launches the npm package.
+    # Sign-in is a browser prompt; no secret is passed through this manifest.
+    - name: copilot-studio-mcp
+      registry: false
+      transport: stdio
+      command: npx
+      args: ["-y", "@microsoft/copilot-studio-mcp@latest"]

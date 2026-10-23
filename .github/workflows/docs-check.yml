@@ -1,0 +1,84 @@
+name: Docs check
+
+# Two kinds of check, deliberately split:
+#   - structure: frontmatter, internal links/anchors, index.json freshness. Runs on every PR,
+#     no network needed, so it is fast and never fails for a reason outside the repo.
+#   - external links: Microsoft Learn and friends. Slow and flaky, so it runs on a schedule and
+#     is not allowed to block a PR.
+
+on:
+  pull_request:
+    paths: ['**/*.md', 'index.json', 'maintenance/**']
+  push:
+    branches: [main]
+    paths: ['**/*.md', 'index.json', 'maintenance/**']
+  schedule:
+    - cron: '0 4 * * 1' # weekly, Mondays
+  workflow_dispatch:
+
+jobs:
+  structure:
+    name: Structure, links, index
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check frontmatter, internal links, anchors, index freshness
+        run: node maintenance/scripts/check.mjs
+      - name: Confirm the index rebuilds deterministically
+        run: |
+          node maintenance/scripts/build-index.mjs
+          git diff --exit-code index.json || {
+            echo "::error::index.json changed on rebuild. Run 'node maintenance/scripts/build-index.mjs' and commit the result."
+            exit 1
+          }
+
+  packages:
+    name: APM packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install the APM CLI
+        run: curl -sSL https://aka.ms/apm-unix | sh
+      - name: Validate every package
+        run: |
+          set -euo pipefail
+          for dir in packages/*/; do
+            [ -f "$dir/apm.yml" ] || continue
+            echo "::group::$dir"
+            (cd "$dir" && apm compile --validate && apm pack --dry-run)
+            echo "::endgroup::"
+          done
+      - name: Packages must not ship generated output
+        run: |
+          found=""
+          for dir in packages/*/; do
+            for artefact in .github .agents .claude-plugin apm_modules apm.lock.yaml build; do
+              if [ -e "$dir$artefact" ]; then found="$found\n$dir$artefact"; fi
+            done
+          done
+          if [ -n "$found" ]; then
+            printf '::error::Generated APM output must not be committed:%b\n' "$found"
+            exit 1
+          fi
+
+  external:
+    name: External links
+    # Scheduled or manual only: a third-party outage should not fail a documentation PR.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress --max-retries 2 --accept 200,206,403,429
+            './best-practices/**/*.md' './docs/**/*.md' './dev-setup/**/*.md'
+            './templates/**/*.md' './packages/**/*.md' './maintenance/**/*.md'
+            './README.md' './AGENTS.md' './CONTRIBUTING.md' './SECURITY.md'
+          fail: true

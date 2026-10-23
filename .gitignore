@@ -1,0 +1,8 @@
+.agents/
+.claude/
+skills-lock.json
+
+# APM generated output: these are produced where a package is consumed, never committed here
+apm_modules/
+apm.lock.yaml
+build/

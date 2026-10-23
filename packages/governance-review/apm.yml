@@ -1,0 +1,11 @@
+name: governance-review
+version: 0.1.0
+description: Reviewer and consultant toolkit — security, DLP, and environment reviews against the ECDX standards, with findings reported by gate ID
+author: ECDX platform team
+license: MIT
+
+targets:
+  - copilot
+  - claude
+
+includes: auto

@@ -1,0 +1,4296 @@
+{
+  "schema_version": 1,
+  "about": "Generated from document frontmatter by maintenance/scripts/build-index.mjs. Do not edit by hand. section line ranges are 1-based and inclusive, relative to the file including frontmatter.",
+  "conventions": {
+    "practice_dir": "best-practices",
+    "explanatory_dir": "docs",
+    "dev_setup_dir": "dev-setup",
+    "maintenance_dir": "maintenance",
+    "packages_dir": "packages",
+    "templates_dir": "templates",
+    "types": [
+      "practice",
+      "guide",
+      "reference",
+      "template",
+      "index",
+      "meta"
+    ],
+    "package_primitives": {
+      "dir": "packages/*/.apm",
+      "note": "Installed into a consuming project by `apm install`, so indexed here for retrieval even though they are not knowledge-base docs.",
+      "kinds": [
+        "skill",
+        "instruction",
+        "prompt",
+        "agent"
+      ]
+    }
+  },
+  "docs": [
+    {
+      "path": "AGENTS.md",
+      "dir": "/",
+      "title": "Agent Guide",
+      "description": "Routing, precedence, citation conventions, and consumption rules for AI agents working in this knowledge base",
+      "type": "meta",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 9,
+      "sections": [
+        {
+          "anchor": "repository-map",
+          "heading": "Repository map",
+          "start_line": 14,
+          "end_line": 25,
+          "subsections": []
+        },
+        {
+          "anchor": "read-this-first",
+          "heading": "Read this first",
+          "start_line": 26,
+          "end_line": 39,
+          "subsections": []
+        },
+        {
+          "anchor": "routing",
+          "heading": "Routing",
+          "start_line": 40,
+          "end_line": 64,
+          "subsections": []
+        },
+        {
+          "anchor": "precedence",
+          "heading": "Precedence",
+          "start_line": 65,
+          "end_line": 74,
+          "subsections": []
+        },
+        {
+          "anchor": "minimum-reading",
+          "heading": "Minimum reading",
+          "start_line": 75,
+          "end_line": 85,
+          "subsections": []
+        },
+        {
+          "anchor": "using-indexjson",
+          "heading": "Using index.json",
+          "start_line": 86,
+          "end_line": 101,
+          "subsections": []
+        },
+        {
+          "anchor": "citation",
+          "heading": "Citation",
+          "start_line": 102,
+          "end_line": 112,
+          "subsections": []
+        },
+        {
+          "anchor": "how-to-use-this-repo",
+          "heading": "How to use this repo",
+          "start_line": 113,
+          "end_line": 138,
+          "subsections": []
+        },
+        {
+          "anchor": "vocabulary-this-repo-uses",
+          "heading": "Vocabulary this repo uses",
+          "start_line": 139,
+          "end_line": 153,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Agent Guide",
+          "anchor": "agent-guide",
+          "line": 7
+        },
+        {
+          "level": 2,
+          "text": "Repository map",
+          "anchor": "repository-map",
+          "line": 14
+        },
+        {
+          "level": 2,
+          "text": "Read this first",
+          "anchor": "read-this-first",
+          "line": 26
+        },
+        {
+          "level": 2,
+          "text": "Routing",
+          "anchor": "routing",
+          "line": 40
+        },
+        {
+          "level": 2,
+          "text": "Precedence",
+          "anchor": "precedence",
+          "line": 65
+        },
+        {
+          "level": 2,
+          "text": "Minimum reading",
+          "anchor": "minimum-reading",
+          "line": 75
+        },
+        {
+          "level": 2,
+          "text": "Using index.json",
+          "anchor": "using-indexjson",
+          "line": 86
+        },
+        {
+          "level": 2,
+          "text": "Citation",
+          "anchor": "citation",
+          "line": 102
+        },
+        {
+          "level": 2,
+          "text": "How to use this repo",
+          "anchor": "how-to-use-this-repo",
+          "line": 113
+        },
+        {
+          "level": 2,
+          "text": "Vocabulary this repo uses",
+          "anchor": "vocabulary-this-repo-uses",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "dir": "/",
+      "title": "Contributing",
+      "description": "Frontmatter schema, writing conventions, and the checks that run on a pull request",
+      "type": "meta",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "where-things-go",
+          "heading": "Where things go",
+          "start_line": 9,
+          "end_line": 23,
+          "subsections": []
+        },
+        {
+          "anchor": "frontmatter-schema",
+          "heading": "Frontmatter schema",
+          "start_line": 24,
+          "end_line": 40,
+          "subsections": []
+        },
+        {
+          "anchor": "writing-for-people-and-agents",
+          "heading": "Writing for people and agents",
+          "start_line": 41,
+          "end_line": 78,
+          "subsections": [
+            "signs-of-machine-written-text"
+          ]
+        },
+        {
+          "anchor": "before-you-open-a-pr",
+          "heading": "Before you open a PR",
+          "start_line": 79,
+          "end_line": 94,
+          "subsections": []
+        },
+        {
+          "anchor": "security",
+          "heading": "Security",
+          "start_line": 95,
+          "end_line": 100,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Where things go",
+          "anchor": "where-things-go",
+          "line": 9
+        },
+        {
+          "level": 2,
+          "text": "Frontmatter schema",
+          "anchor": "frontmatter-schema",
+          "line": 24
+        },
+        {
+          "level": 2,
+          "text": "Writing for people and agents",
+          "anchor": "writing-for-people-and-agents",
+          "line": 41
+        },
+        {
+          "level": 3,
+          "text": "Signs of machine-written text",
+          "anchor": "signs-of-machine-written-text",
+          "line": 60
+        },
+        {
+          "level": 2,
+          "text": "Before you open a PR",
+          "anchor": "before-you-open-a-pr",
+          "line": 79
+        },
+        {
+          "level": 2,
+          "text": "Security",
+          "anchor": "security",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "path": "README.md",
+      "dir": "/",
+      "title": "ECDX",
+      "description": "A working knowledge base for Power Platform: what tends to work, why, and the setup and decision guides that go with it",
+      "type": "meta",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 8,
+      "sections": [
+        {
+          "anchor": "reading-path",
+          "heading": "Reading path",
+          "start_line": 10,
+          "end_line": 24,
+          "subsections": []
+        },
+        {
+          "anchor": "decision-guides",
+          "heading": "Decision guides",
+          "start_line": 25,
+          "end_line": 34,
+          "subsections": []
+        },
+        {
+          "anchor": "layout",
+          "heading": "Layout",
+          "start_line": 35,
+          "end_line": 46,
+          "subsections": []
+        },
+        {
+          "anchor": "starting-a-project",
+          "heading": "Starting a project",
+          "start_line": 47,
+          "end_line": 56,
+          "subsections": []
+        },
+        {
+          "anchor": "setting-up-a-machine",
+          "heading": "Setting up a machine",
+          "start_line": 57,
+          "end_line": 64,
+          "subsections": []
+        },
+        {
+          "anchor": "using-this-as-a-knowledge-base",
+          "heading": "Using this as a knowledge base",
+          "start_line": 65,
+          "end_line": 74,
+          "subsections": []
+        },
+        {
+          "anchor": "for-ai-agents",
+          "heading": "For AI agents",
+          "start_line": 75,
+          "end_line": 79,
+          "subsections": []
+        },
+        {
+          "anchor": "contributing",
+          "heading": "Contributing",
+          "start_line": 80,
+          "end_line": 84,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Reading path",
+          "anchor": "reading-path",
+          "line": 10
+        },
+        {
+          "level": 2,
+          "text": "Decision guides",
+          "anchor": "decision-guides",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Layout",
+          "anchor": "layout",
+          "line": 35
+        },
+        {
+          "level": 2,
+          "text": "Starting a project",
+          "anchor": "starting-a-project",
+          "line": 47
+        },
+        {
+          "level": 2,
+          "text": "Setting up a machine",
+          "anchor": "setting-up-a-machine",
+          "line": 57
+        },
+        {
+          "level": 2,
+          "text": "Using this as a knowledge base",
+          "anchor": "using-this-as-a-knowledge-base",
+          "line": 65
+        },
+        {
+          "level": 2,
+          "text": "For AI agents",
+          "anchor": "for-ai-agents",
+          "line": 75
+        },
+        {
+          "level": 2,
+          "text": "Contributing",
+          "anchor": "contributing",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "SECURITY.md",
+      "dir": "/",
+      "title": "Security",
+      "description": "How to report a security concern with content in this knowledge base",
+      "type": "meta",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 3,
+      "sections": [
+        {
+          "anchor": "report-it",
+          "heading": "Report it",
+          "start_line": 13,
+          "end_line": 22,
+          "subsections": []
+        },
+        {
+          "anchor": "what-happens-next",
+          "heading": "What happens next",
+          "start_line": 23,
+          "end_line": 27,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 28,
+          "end_line": 32,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Reporting a security concern",
+          "anchor": "reporting-a-security-concern",
+          "line": 7
+        },
+        {
+          "level": 2,
+          "text": "Report it",
+          "anchor": "report-it",
+          "line": 13
+        },
+        {
+          "level": 2,
+          "text": "What happens next",
+          "anchor": "what-happens-next",
+          "line": 23
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "best-practices/README.md",
+      "dir": "best-practices",
+      "title": "Best Practices",
+      "description": "What tends to work on Power Platform, and why. Guidance and reasoning, not rules to comply with",
+      "type": "index",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 3,
+      "sections": [
+        {
+          "anchor": "where-to-start",
+          "heading": "Where to start",
+          "start_line": 13,
+          "end_line": 32,
+          "subsections": []
+        },
+        {
+          "anchor": "how-to-read-this",
+          "heading": "How to read this",
+          "start_line": 33,
+          "end_line": 41,
+          "subsections": []
+        },
+        {
+          "anchor": "contributing",
+          "heading": "Contributing",
+          "start_line": 42,
+          "end_line": 54,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Where to start",
+          "anchor": "where-to-start",
+          "line": 13
+        },
+        {
+          "level": 2,
+          "text": "How to read this",
+          "anchor": "how-to-read-this",
+          "line": 33
+        },
+        {
+          "level": 2,
+          "text": "Contributing",
+          "anchor": "contributing",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "best-practices/ai-agents.md",
+      "dir": "best-practices",
+      "title": "AI Agents and Copilot Studio",
+      "description": "Rules for Copilot Studio agents and embedded AI features: authentication, channels, sharing, knowledge sources, transcripts, telemetry, responsible use",
+      "type": "practice",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "copilot-studio",
+        "ai-agents",
+        "responsible-ai",
+        "authentication",
+        "channels",
+        "knowledge-sources",
+        "transcripts",
+        "capacity"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 11,
+      "sections": [
+        {
+          "anchor": "building-and-naming",
+          "heading": "Building and naming",
+          "start_line": 12,
+          "end_line": 19,
+          "subsections": []
+        },
+        {
+          "anchor": "tooling",
+          "heading": "Tooling",
+          "start_line": 20,
+          "end_line": 50,
+          "subsections": [
+            "direction-of-mcp"
+          ]
+        },
+        {
+          "anchor": "authentication",
+          "heading": "Authentication",
+          "start_line": 51,
+          "end_line": 94,
+          "subsections": [
+            "no-authentication-is-a-legitimate-design-not-a-mistake"
+          ]
+        },
+        {
+          "anchor": "channels",
+          "heading": "Channels",
+          "start_line": 95,
+          "end_line": 110,
+          "subsections": []
+        },
+        {
+          "anchor": "sharing",
+          "heading": "Sharing",
+          "start_line": 111,
+          "end_line": 120,
+          "subsections": []
+        },
+        {
+          "anchor": "knowledge-sources",
+          "heading": "Knowledge sources",
+          "start_line": 121,
+          "end_line": 131,
+          "subsections": []
+        },
+        {
+          "anchor": "generative-ai",
+          "heading": "Generative AI",
+          "start_line": 132,
+          "end_line": 142,
+          "subsections": []
+        },
+        {
+          "anchor": "testing",
+          "heading": "Testing",
+          "start_line": 143,
+          "end_line": 151,
+          "subsections": []
+        },
+        {
+          "anchor": "transcripts-and-telemetry",
+          "heading": "Transcripts and telemetry",
+          "start_line": 152,
+          "end_line": 168,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-for-teams",
+          "heading": "Dataverse for Teams",
+          "start_line": 169,
+          "end_line": 173,
+          "subsections": []
+        },
+        {
+          "anchor": "references",
+          "heading": "References",
+          "start_line": 174,
+          "end_line": 182,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Building and naming",
+          "anchor": "building-and-naming",
+          "line": 12
+        },
+        {
+          "level": 2,
+          "text": "Tooling",
+          "anchor": "tooling",
+          "line": 20
+        },
+        {
+          "level": 3,
+          "text": "Direction of MCP",
+          "anchor": "direction-of-mcp",
+          "line": 36
+        },
+        {
+          "level": 2,
+          "text": "Authentication",
+          "anchor": "authentication",
+          "line": 51
+        },
+        {
+          "level": 3,
+          "text": "No authentication is a legitimate design, not a mistake",
+          "anchor": "no-authentication-is-a-legitimate-design-not-a-mistake",
+          "line": 74
+        },
+        {
+          "level": 2,
+          "text": "Channels",
+          "anchor": "channels",
+          "line": 95
+        },
+        {
+          "level": 2,
+          "text": "Sharing",
+          "anchor": "sharing",
+          "line": 111
+        },
+        {
+          "level": 2,
+          "text": "Knowledge sources",
+          "anchor": "knowledge-sources",
+          "line": 121
+        },
+        {
+          "level": 2,
+          "text": "Generative AI",
+          "anchor": "generative-ai",
+          "line": 132
+        },
+        {
+          "level": 2,
+          "text": "Testing",
+          "anchor": "testing",
+          "line": 143
+        },
+        {
+          "level": 2,
+          "text": "Transcripts and telemetry",
+          "anchor": "transcripts-and-telemetry",
+          "line": 152
+        },
+        {
+          "level": 2,
+          "text": "Dataverse for Teams",
+          "anchor": "dataverse-for-teams",
+          "line": 169
+        },
+        {
+          "level": 2,
+          "text": "References",
+          "anchor": "references",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "path": "best-practices/alm.md",
+      "dir": "best-practices",
+      "title": "Solutions and ALM",
+      "description": "What a solution is, managed vs unmanaged by environment, complexity, where the truth lives, getting to production, and documentation",
+      "type": "practice",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "solutions",
+        "alm",
+        "managed",
+        "unmanaged",
+        "dependencies",
+        "environment-variables",
+        "version-control",
+        "documentation",
+        "complexity"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 13,
+      "sections": [
+        {
+          "anchor": "what-a-solution-is",
+          "heading": "What a solution is",
+          "start_line": 9,
+          "end_line": 17,
+          "subsections": []
+        },
+        {
+          "anchor": "managed-vs-unmanaged",
+          "heading": "Managed vs unmanaged",
+          "start_line": 18,
+          "end_line": 37,
+          "subsections": []
+        },
+        {
+          "anchor": "solution-layers",
+          "heading": "Solution layers",
+          "start_line": 38,
+          "end_line": 60,
+          "subsections": []
+        },
+        {
+          "anchor": "complexity",
+          "heading": "Complexity",
+          "start_line": 61,
+          "end_line": 77,
+          "subsections": []
+        },
+        {
+          "anchor": "how-much-process",
+          "heading": "How much process",
+          "start_line": 78,
+          "end_line": 117,
+          "subsections": [
+            "is-it-a-core-business-process"
+          ]
+        },
+        {
+          "anchor": "where-the-truth-lives",
+          "heading": "Where the truth lives",
+          "start_line": 118,
+          "end_line": 131,
+          "subsections": []
+        },
+        {
+          "anchor": "getting-to-production",
+          "heading": "Getting to production",
+          "start_line": 132,
+          "end_line": 147,
+          "subsections": []
+        },
+        {
+          "anchor": "environment-variables-and-connection-references",
+          "heading": "Environment variables and connection references",
+          "start_line": 148,
+          "end_line": 157,
+          "subsections": []
+        },
+        {
+          "anchor": "dependencies",
+          "heading": "Dependencies",
+          "start_line": 158,
+          "end_line": 165,
+          "subsections": []
+        },
+        {
+          "anchor": "documentation",
+          "heading": "Documentation",
+          "start_line": 166,
+          "end_line": 182,
+          "subsections": []
+        },
+        {
+          "anchor": "tech-debt",
+          "heading": "Tech debt",
+          "start_line": 183,
+          "end_line": 198,
+          "subsections": []
+        },
+        {
+          "anchor": "lifecycle",
+          "heading": "Lifecycle",
+          "start_line": 199,
+          "end_line": 217,
+          "subsections": []
+        },
+        {
+          "anchor": "references",
+          "heading": "References",
+          "start_line": 218,
+          "end_line": 224,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "What a solution is",
+          "anchor": "what-a-solution-is",
+          "line": 9
+        },
+        {
+          "level": 2,
+          "text": "Managed vs unmanaged",
+          "anchor": "managed-vs-unmanaged",
+          "line": 18
+        },
+        {
+          "level": 2,
+          "text": "Solution layers",
+          "anchor": "solution-layers",
+          "line": 38
+        },
+        {
+          "level": 2,
+          "text": "Complexity",
+          "anchor": "complexity",
+          "line": 61
+        },
+        {
+          "level": 2,
+          "text": "How much process",
+          "anchor": "how-much-process",
+          "line": 78
+        },
+        {
+          "level": 3,
+          "text": "Is it a core business process?",
+          "anchor": "is-it-a-core-business-process",
+          "line": 107
+        },
+        {
+          "level": 2,
+          "text": "Where the truth lives",
+          "anchor": "where-the-truth-lives",
+          "line": 118
+        },
+        {
+          "level": 2,
+          "text": "Getting to production",
+          "anchor": "getting-to-production",
+          "line": 132
+        },
+        {
+          "level": 2,
+          "text": "Environment variables and connection references",
+          "anchor": "environment-variables-and-connection-references",
+          "line": 148
+        },
+        {
+          "level": 2,
+          "text": "Dependencies",
+          "anchor": "dependencies",
+          "line": 158
+        },
+        {
+          "level": 2,
+          "text": "Documentation",
+          "anchor": "documentation",
+          "line": 166
+        },
+        {
+          "level": 2,
+          "text": "Tech debt",
+          "anchor": "tech-debt",
+          "line": 183
+        },
+        {
+          "level": 2,
+          "text": "Lifecycle",
+          "anchor": "lifecycle",
+          "line": 199
+        },
+        {
+          "level": 2,
+          "text": "References",
+          "anchor": "references",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "path": "best-practices/coding.md",
+      "dir": "best-practices",
+      "title": "Coding Standards",
+      "description": "Building rules for canvas apps, Power Automate flows, Dataverse plugins, and Code Apps",
+      "type": "practice",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "canvas-apps",
+        "power-fx",
+        "flows",
+        "plugins",
+        "c-sharp",
+        "code-apps",
+        "csp",
+        "efficiency",
+        "delegation",
+        "accessibility"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 7,
+      "sections": [
+        {
+          "anchor": "common-failure-modes",
+          "heading": "Common failure modes",
+          "start_line": 14,
+          "end_line": 31,
+          "subsections": []
+        },
+        {
+          "anchor": "canvas-apps",
+          "heading": "Canvas apps",
+          "start_line": 32,
+          "end_line": 57,
+          "subsections": []
+        },
+        {
+          "anchor": "flows",
+          "heading": "Flows",
+          "start_line": 58,
+          "end_line": 74,
+          "subsections": []
+        },
+        {
+          "anchor": "plugins-and-workflow-activities",
+          "heading": "Plugins and workflow activities",
+          "start_line": 75,
+          "end_line": 88,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-data-access",
+          "heading": "Dataverse data access",
+          "start_line": 89,
+          "end_line": 99,
+          "subsections": []
+        },
+        {
+          "anchor": "code-apps",
+          "heading": "Code Apps",
+          "start_line": 100,
+          "end_line": 118,
+          "subsections": []
+        },
+        {
+          "anchor": "references",
+          "heading": "References",
+          "start_line": 119,
+          "end_line": 127,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Common failure modes",
+          "anchor": "common-failure-modes",
+          "line": 14
+        },
+        {
+          "level": 2,
+          "text": "Canvas apps",
+          "anchor": "canvas-apps",
+          "line": 32
+        },
+        {
+          "level": 2,
+          "text": "Flows",
+          "anchor": "flows",
+          "line": 58
+        },
+        {
+          "level": 2,
+          "text": "Plugins and workflow activities",
+          "anchor": "plugins-and-workflow-activities",
+          "line": 75
+        },
+        {
+          "level": 2,
+          "text": "Dataverse data access",
+          "anchor": "dataverse-data-access",
+          "line": 89
+        },
+        {
+          "level": 2,
+          "text": "Code Apps",
+          "anchor": "code-apps",
+          "line": 100
+        },
+        {
+          "level": 2,
+          "text": "References",
+          "anchor": "references",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "path": "best-practices/environments.md",
+      "dir": "best-practices",
+      "title": "Environments",
+      "description": "Environment types and what each is for, how they chain, lifecycle, access, and the controls that keep non-production from becoming production",
+      "type": "practice",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "environments",
+        "purpose",
+        "lifecycle",
+        "creation-rights",
+        "managed-environments",
+        "pseudo-prod",
+        "promotion"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 15,
+      "sections": [
+        {
+          "anchor": "types-and-purpose",
+          "heading": "Types and purpose",
+          "start_line": 17,
+          "end_line": 30,
+          "subsections": []
+        },
+        {
+          "anchor": "developer-environments-are-now-managed",
+          "heading": "Developer environments are now managed",
+          "start_line": 31,
+          "end_line": 56,
+          "subsections": []
+        },
+        {
+          "anchor": "chains",
+          "heading": "Chains",
+          "start_line": 57,
+          "end_line": 82,
+          "subsections": []
+        },
+        {
+          "anchor": "promotion",
+          "heading": "Promotion",
+          "start_line": 83,
+          "end_line": 95,
+          "subsections": []
+        },
+        {
+          "anchor": "pseudo-prod",
+          "heading": "Pseudo prod",
+          "start_line": 96,
+          "end_line": 120,
+          "subsections": []
+        },
+        {
+          "anchor": "lifecycle-and-expiry",
+          "heading": "Lifecycle and expiry",
+          "start_line": 121,
+          "end_line": 137,
+          "subsections": []
+        },
+        {
+          "anchor": "access",
+          "heading": "Access",
+          "start_line": 138,
+          "end_line": 145,
+          "subsections": []
+        },
+        {
+          "anchor": "creation-rights",
+          "heading": "Creation rights",
+          "start_line": 146,
+          "end_line": 157,
+          "subsections": []
+        },
+        {
+          "anchor": "managed-environments",
+          "heading": "Managed Environments",
+          "start_line": 158,
+          "end_line": 175,
+          "subsections": []
+        },
+        {
+          "anchor": "default-environment",
+          "heading": "Default environment",
+          "start_line": 176,
+          "end_line": 186,
+          "subsections": []
+        },
+        {
+          "anchor": "dedicated-chains",
+          "heading": "Dedicated chains",
+          "start_line": 187,
+          "end_line": 195,
+          "subsections": []
+        },
+        {
+          "anchor": "special-workloads",
+          "heading": "Special workloads",
+          "start_line": 196,
+          "end_line": 204,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-for-teams-is-being-retired",
+          "heading": "Dataverse for Teams is being retired",
+          "start_line": 205,
+          "end_line": 225,
+          "subsections": []
+        },
+        {
+          "anchor": "principles",
+          "heading": "Principles",
+          "start_line": 226,
+          "end_line": 236,
+          "subsections": []
+        },
+        {
+          "anchor": "references",
+          "heading": "References",
+          "start_line": 237,
+          "end_line": 243,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Types and purpose",
+          "anchor": "types-and-purpose",
+          "line": 17
+        },
+        {
+          "level": 2,
+          "text": "Developer environments are now managed",
+          "anchor": "developer-environments-are-now-managed",
+          "line": 31
+        },
+        {
+          "level": 2,
+          "text": "Chains",
+          "anchor": "chains",
+          "line": 57
+        },
+        {
+          "level": 2,
+          "text": "Promotion",
+          "anchor": "promotion",
+          "line": 83
+        },
+        {
+          "level": 2,
+          "text": "Pseudo prod",
+          "anchor": "pseudo-prod",
+          "line": 96
+        },
+        {
+          "level": 2,
+          "text": "Lifecycle and expiry",
+          "anchor": "lifecycle-and-expiry",
+          "line": 121
+        },
+        {
+          "level": 2,
+          "text": "Access",
+          "anchor": "access",
+          "line": 138
+        },
+        {
+          "level": 2,
+          "text": "Creation rights",
+          "anchor": "creation-rights",
+          "line": 146
+        },
+        {
+          "level": 2,
+          "text": "Managed Environments",
+          "anchor": "managed-environments",
+          "line": 158
+        },
+        {
+          "level": 2,
+          "text": "Default environment",
+          "anchor": "default-environment",
+          "line": 176
+        },
+        {
+          "level": 2,
+          "text": "Dedicated chains",
+          "anchor": "dedicated-chains",
+          "line": 187
+        },
+        {
+          "level": 2,
+          "text": "Special workloads",
+          "anchor": "special-workloads",
+          "line": 196
+        },
+        {
+          "level": 2,
+          "text": "Dataverse for Teams is being retired",
+          "anchor": "dataverse-for-teams-is-being-retired",
+          "line": 205
+        },
+        {
+          "level": 2,
+          "text": "Principles",
+          "anchor": "principles",
+          "line": 226
+        },
+        {
+          "level": 2,
+          "text": "References",
+          "anchor": "references",
+          "line": 237
+        }
+      ]
+    },
+    {
+      "path": "best-practices/naming.md",
+      "dir": "best-practices",
+      "title": "Naming Standards",
+      "description": "Naming conventions for every Power Platform artifact: environments, solutions, tables, apps, flows, groups, identities, and branches",
+      "type": "practice",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "naming",
+        "environments",
+        "solutions",
+        "dataverse",
+        "apps",
+        "flows",
+        "security-roles",
+        "groups",
+        "agents",
+        "azure-devops"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 11,
+      "sections": [
+        {
+          "anchor": "environments",
+          "heading": "Environments",
+          "start_line": 11,
+          "end_line": 24,
+          "subsections": []
+        },
+        {
+          "anchor": "solutions-and-publishers",
+          "heading": "Solutions and publishers",
+          "start_line": 25,
+          "end_line": 35,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse",
+          "heading": "Dataverse",
+          "start_line": 36,
+          "end_line": 50,
+          "subsections": []
+        },
+        {
+          "anchor": "apps",
+          "heading": "Apps",
+          "start_line": 51,
+          "end_line": 59,
+          "subsections": []
+        },
+        {
+          "anchor": "flows",
+          "heading": "Flows",
+          "start_line": 60,
+          "end_line": 66,
+          "subsections": []
+        },
+        {
+          "anchor": "ai-agents",
+          "heading": "AI agents",
+          "start_line": 67,
+          "end_line": 72,
+          "subsections": []
+        },
+        {
+          "anchor": "security-roles",
+          "heading": "Security roles",
+          "start_line": 73,
+          "end_line": 77,
+          "subsections": []
+        },
+        {
+          "anchor": "entra-id-groups",
+          "heading": "Entra ID groups",
+          "start_line": 78,
+          "end_line": 92,
+          "subsections": []
+        },
+        {
+          "anchor": "service-accounts",
+          "heading": "Service accounts",
+          "start_line": 93,
+          "end_line": 98,
+          "subsections": []
+        },
+        {
+          "anchor": "azure-devops",
+          "heading": "Azure DevOps",
+          "start_line": 99,
+          "end_line": 104,
+          "subsections": []
+        },
+        {
+          "anchor": "references",
+          "heading": "References",
+          "start_line": 105,
+          "end_line": 109,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Environments",
+          "anchor": "environments",
+          "line": 11
+        },
+        {
+          "level": 2,
+          "text": "Solutions and publishers",
+          "anchor": "solutions-and-publishers",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Dataverse",
+          "anchor": "dataverse",
+          "line": 36
+        },
+        {
+          "level": 2,
+          "text": "Apps",
+          "anchor": "apps",
+          "line": 51
+        },
+        {
+          "level": 2,
+          "text": "Flows",
+          "anchor": "flows",
+          "line": 60
+        },
+        {
+          "level": 2,
+          "text": "AI agents",
+          "anchor": "ai-agents",
+          "line": 67
+        },
+        {
+          "level": 2,
+          "text": "Security roles",
+          "anchor": "security-roles",
+          "line": 73
+        },
+        {
+          "level": 2,
+          "text": "Entra ID groups",
+          "anchor": "entra-id-groups",
+          "line": 78
+        },
+        {
+          "level": 2,
+          "text": "Service accounts",
+          "anchor": "service-accounts",
+          "line": 93
+        },
+        {
+          "level": 2,
+          "text": "Azure DevOps",
+          "anchor": "azure-devops",
+          "line": 99
+        },
+        {
+          "level": 2,
+          "text": "References",
+          "anchor": "references",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "best-practices/release-checklist.md",
+      "dir": "best-practices",
+      "title": "Release Checklist",
+      "description": "What is worth checking before people depend on a solution, and what each check prevents",
+      "type": "practice",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "release",
+        "checklist",
+        "review",
+        "testing",
+        "smoke-tests",
+        "regression",
+        "playwright"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 9,
+      "sections": [
+        {
+          "anchor": "solutions-and-alm",
+          "heading": "Solutions and ALM",
+          "start_line": 26,
+          "end_line": 35,
+          "subsections": []
+        },
+        {
+          "anchor": "source-and-configuration",
+          "heading": "Source and configuration",
+          "start_line": 36,
+          "end_line": 43,
+          "subsections": []
+        },
+        {
+          "anchor": "naming",
+          "heading": "Naming",
+          "start_line": 44,
+          "end_line": 49,
+          "subsections": []
+        },
+        {
+          "anchor": "operability",
+          "heading": "Operability",
+          "start_line": 50,
+          "end_line": 56,
+          "subsections": []
+        },
+        {
+          "anchor": "security-and-access",
+          "heading": "Security and access",
+          "start_line": 57,
+          "end_line": 67,
+          "subsections": []
+        },
+        {
+          "anchor": "data",
+          "heading": "Data",
+          "start_line": 68,
+          "end_line": 73,
+          "subsections": []
+        },
+        {
+          "anchor": "documentation",
+          "heading": "Documentation",
+          "start_line": 74,
+          "end_line": 79,
+          "subsections": []
+        },
+        {
+          "anchor": "testing",
+          "heading": "Testing",
+          "start_line": 80,
+          "end_line": 114,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 115,
+          "end_line": 118,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Solutions and ALM",
+          "anchor": "solutions-and-alm",
+          "line": 26
+        },
+        {
+          "level": 2,
+          "text": "Source and configuration",
+          "anchor": "source-and-configuration",
+          "line": 36
+        },
+        {
+          "level": 2,
+          "text": "Naming",
+          "anchor": "naming",
+          "line": 44
+        },
+        {
+          "level": 2,
+          "text": "Operability",
+          "anchor": "operability",
+          "line": 50
+        },
+        {
+          "level": 2,
+          "text": "Security and access",
+          "anchor": "security-and-access",
+          "line": 57
+        },
+        {
+          "level": 2,
+          "text": "Data",
+          "anchor": "data",
+          "line": 68
+        },
+        {
+          "level": 2,
+          "text": "Documentation",
+          "anchor": "documentation",
+          "line": 74
+        },
+        {
+          "level": 2,
+          "text": "Testing",
+          "anchor": "testing",
+          "line": 80
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "path": "best-practices/security.md",
+      "dir": "best-practices",
+      "title": "Security and Access Management",
+      "description": "Security layers, identity ownership, Dataverse roles, Entra group teams, isolation, audit, managed security, and DLP policies",
+      "type": "practice",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "security",
+        "identities",
+        "service-accounts",
+        "spn",
+        "security-roles",
+        "groups",
+        "tenant-isolation",
+        "auditing",
+        "dlp",
+        "csp",
+        "managed-security"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 13,
+      "sections": [
+        {
+          "anchor": "layers",
+          "heading": "Layers",
+          "start_line": 9,
+          "end_line": 24,
+          "subsections": []
+        },
+        {
+          "anchor": "data-classification",
+          "heading": "Data classification",
+          "start_line": 25,
+          "end_line": 44,
+          "subsections": []
+        },
+        {
+          "anchor": "identities",
+          "heading": "Identities",
+          "start_line": 45,
+          "end_line": 74,
+          "subsections": []
+        },
+        {
+          "anchor": "baseline-security-roles",
+          "heading": "Baseline security roles",
+          "start_line": 75,
+          "end_line": 89,
+          "subsections": []
+        },
+        {
+          "anchor": "entra-id-group-teams",
+          "heading": "Entra ID group teams",
+          "start_line": 90,
+          "end_line": 101,
+          "subsections": []
+        },
+        {
+          "anchor": "tenant-administration",
+          "heading": "Tenant administration",
+          "start_line": 102,
+          "end_line": 109,
+          "subsections": []
+        },
+        {
+          "anchor": "tenant-isolation",
+          "heading": "Tenant isolation",
+          "start_line": 110,
+          "end_line": 117,
+          "subsections": []
+        },
+        {
+          "anchor": "managed-security",
+          "heading": "Managed Security",
+          "start_line": 118,
+          "end_line": 129,
+          "subsections": []
+        },
+        {
+          "anchor": "content-security-policy",
+          "heading": "Content Security Policy",
+          "start_line": 130,
+          "end_line": 139,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-auditing",
+          "heading": "Dataverse auditing",
+          "start_line": 140,
+          "end_line": 149,
+          "subsections": []
+        },
+        {
+          "anchor": "secrets-and-credentials",
+          "heading": "Secrets and credentials",
+          "start_line": 150,
+          "end_line": 159,
+          "subsections": []
+        },
+        {
+          "anchor": "dlp-policies",
+          "heading": "DLP policies",
+          "start_line": 160,
+          "end_line": 195,
+          "subsections": [
+            "connector-approval"
+          ]
+        },
+        {
+          "anchor": "references",
+          "heading": "References",
+          "start_line": 196,
+          "end_line": 206,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Layers",
+          "anchor": "layers",
+          "line": 9
+        },
+        {
+          "level": 2,
+          "text": "Data classification",
+          "anchor": "data-classification",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Identities",
+          "anchor": "identities",
+          "line": 45
+        },
+        {
+          "level": 2,
+          "text": "Baseline security roles",
+          "anchor": "baseline-security-roles",
+          "line": 75
+        },
+        {
+          "level": 2,
+          "text": "Entra ID group teams",
+          "anchor": "entra-id-group-teams",
+          "line": 90
+        },
+        {
+          "level": 2,
+          "text": "Tenant administration",
+          "anchor": "tenant-administration",
+          "line": 102
+        },
+        {
+          "level": 2,
+          "text": "Tenant isolation",
+          "anchor": "tenant-isolation",
+          "line": 110
+        },
+        {
+          "level": 2,
+          "text": "Managed Security",
+          "anchor": "managed-security",
+          "line": 118
+        },
+        {
+          "level": 2,
+          "text": "Content Security Policy",
+          "anchor": "content-security-policy",
+          "line": 130
+        },
+        {
+          "level": 2,
+          "text": "Dataverse auditing",
+          "anchor": "dataverse-auditing",
+          "line": 140
+        },
+        {
+          "level": 2,
+          "text": "Secrets and credentials",
+          "anchor": "secrets-and-credentials",
+          "line": 150
+        },
+        {
+          "level": 2,
+          "text": "DLP policies",
+          "anchor": "dlp-policies",
+          "line": 160
+        },
+        {
+          "level": 3,
+          "text": "Connector approval",
+          "anchor": "connector-approval",
+          "line": 189
+        },
+        {
+          "level": 2,
+          "text": "References",
+          "anchor": "references",
+          "line": 196
+        }
+      ]
+    },
+    {
+      "path": "dev-setup/README.md",
+      "dir": "dev-setup",
+      "title": "Developer Setup",
+      "description": "Getting a workstation ready for Power Platform work: editor, CLIs, MCP servers and agent skills, in the order you need them",
+      "type": "index",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 3,
+      "sections": [
+        {
+          "anchor": "the-short-version",
+          "heading": "The short version",
+          "start_line": 19,
+          "end_line": 34,
+          "subsections": []
+        },
+        {
+          "anchor": "what-you-actually-need",
+          "heading": "What you actually need",
+          "start_line": 35,
+          "end_line": 47,
+          "subsections": []
+        },
+        {
+          "anchor": "house-rules-for-tooling",
+          "heading": "House rules for tooling",
+          "start_line": 48,
+          "end_line": 57,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "The short version",
+          "anchor": "the-short-version",
+          "line": 19
+        },
+        {
+          "level": 2,
+          "text": "What you actually need",
+          "anchor": "what-you-actually-need",
+          "line": 35
+        },
+        {
+          "level": 2,
+          "text": "House rules for tooling",
+          "anchor": "house-rules-for-tooling",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "dev-setup/cli.md",
+      "dir": "dev-setup",
+      "title": "CLIs",
+      "description": "pac and pa: two different Microsoft CLIs, what each is for, and how to install them",
+      "type": "guide",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "pac",
+        "pa",
+        "power-platform-cli",
+        "power-apps-cli",
+        "install"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "installing-pac",
+          "heading": "Installing pac",
+          "start_line": 26,
+          "end_line": 46,
+          "subsections": []
+        },
+        {
+          "anchor": "installing-pa",
+          "heading": "Installing pa",
+          "start_line": 47,
+          "end_line": 59,
+          "subsections": []
+        },
+        {
+          "anchor": "other-clis-you-will-meet",
+          "heading": "Other CLIs you will meet",
+          "start_line": 60,
+          "end_line": 68,
+          "subsections": []
+        },
+        {
+          "anchor": "rules",
+          "heading": "Rules",
+          "start_line": 69,
+          "end_line": 75,
+          "subsections": []
+        },
+        {
+          "anchor": "sources",
+          "heading": "Sources",
+          "start_line": 76,
+          "end_line": 81,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Installing pac",
+          "anchor": "installing-pac",
+          "line": 26
+        },
+        {
+          "level": 2,
+          "text": "Installing pa",
+          "anchor": "installing-pa",
+          "line": 47
+        },
+        {
+          "level": 2,
+          "text": "Other CLIs you will meet",
+          "anchor": "other-clis-you-will-meet",
+          "line": 60
+        },
+        {
+          "level": 2,
+          "text": "Rules",
+          "anchor": "rules",
+          "line": 69
+        },
+        {
+          "level": 2,
+          "text": "Sources",
+          "anchor": "sources",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "path": "dev-setup/skills.md",
+      "dir": "dev-setup",
+      "title": "Agent Skills and Plugins",
+      "description": "The Microsoft Power Platform plugin marketplace: every plugin, what it needs, how to install it, and which one to reach for",
+      "type": "reference",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "skills",
+        "plugins",
+        "power-platform-skills",
+        "dataverse-skills",
+        "copilot",
+        "claude",
+        "scaffolding",
+        "marketplace"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 9,
+      "sections": [
+        {
+          "anchor": "where-the-plugins-live",
+          "heading": "Where the plugins live",
+          "start_line": 20,
+          "end_line": 29,
+          "subsections": []
+        },
+        {
+          "anchor": "install",
+          "heading": "Install",
+          "start_line": 30,
+          "end_line": 61,
+          "subsections": [
+            "one-command-recommended",
+            "per-plugin"
+          ]
+        },
+        {
+          "anchor": "the-plugins",
+          "heading": "The plugins",
+          "start_line": 62,
+          "end_line": 77,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-is-external",
+          "heading": "Dataverse is external",
+          "start_line": 78,
+          "end_line": 110,
+          "subsections": []
+        },
+        {
+          "anchor": "governance-concerns-to-settle-before-rolling-out",
+          "heading": "Governance concerns to settle before rolling out",
+          "start_line": 111,
+          "end_line": 135,
+          "subsections": []
+        },
+        {
+          "anchor": "which-plugin-for-which-task",
+          "heading": "Which plugin for which task",
+          "start_line": 136,
+          "end_line": 140,
+          "subsections": []
+        },
+        {
+          "anchor": "how-this-fits-the-rest-of-the-repo",
+          "heading": "How this fits the rest of the repo",
+          "start_line": 141,
+          "end_line": 152,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 153,
+          "end_line": 158,
+          "subsections": []
+        },
+        {
+          "anchor": "sources",
+          "heading": "Sources",
+          "start_line": 159,
+          "end_line": 163,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Where the plugins live",
+          "anchor": "where-the-plugins-live",
+          "line": 20
+        },
+        {
+          "level": 2,
+          "text": "Install",
+          "anchor": "install",
+          "line": 30
+        },
+        {
+          "level": 3,
+          "text": "One command (recommended)",
+          "anchor": "one-command-recommended",
+          "line": 32
+        },
+        {
+          "level": 3,
+          "text": "Per plugin",
+          "anchor": "per-plugin",
+          "line": 49
+        },
+        {
+          "level": 2,
+          "text": "The plugins",
+          "anchor": "the-plugins",
+          "line": 62
+        },
+        {
+          "level": 2,
+          "text": "Dataverse is external",
+          "anchor": "dataverse-is-external",
+          "line": 78
+        },
+        {
+          "level": 2,
+          "text": "Governance concerns to settle before rolling out",
+          "anchor": "governance-concerns-to-settle-before-rolling-out",
+          "line": 111
+        },
+        {
+          "level": 2,
+          "text": "Which plugin for which task",
+          "anchor": "which-plugin-for-which-task",
+          "line": 136
+        },
+        {
+          "level": 2,
+          "text": "How this fits the rest of the repo",
+          "anchor": "how-this-fits-the-rest-of-the-repo",
+          "line": 141
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 153
+        },
+        {
+          "level": 2,
+          "text": "Sources",
+          "anchor": "sources",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "path": "dev-setup/vscode.md",
+      "dir": "dev-setup",
+      "title": "VS Code",
+      "description": "The extensions that carry the Power Platform tooling, and how to configure MCP servers for VS Code and Copilot CLI",
+      "type": "guide",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "vscode",
+        "extensions",
+        "mcp",
+        "copilot-studio",
+        "dataverse",
+        "configuration"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 4,
+      "sections": [
+        {
+          "anchor": "extensions",
+          "heading": "Extensions",
+          "start_line": 9,
+          "end_line": 34,
+          "subsections": [
+            "copilot-studio-extension"
+          ]
+        },
+        {
+          "anchor": "mcp-servers",
+          "heading": "MCP servers",
+          "start_line": 35,
+          "end_line": 127,
+          "subsections": [
+            "dataverse-mcp",
+            "copilot-studio-mcp",
+            "the-servers-vs-mcpservers-trap"
+          ]
+        },
+        {
+          "anchor": "repo-configuration",
+          "heading": "Repo configuration",
+          "start_line": 128,
+          "end_line": 135,
+          "subsections": []
+        },
+        {
+          "anchor": "sources",
+          "heading": "Sources",
+          "start_line": 136,
+          "end_line": 142,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Extensions",
+          "anchor": "extensions",
+          "line": 9
+        },
+        {
+          "level": 3,
+          "text": "Copilot Studio extension",
+          "anchor": "copilot-studio-extension",
+          "line": 24
+        },
+        {
+          "level": 2,
+          "text": "MCP servers",
+          "anchor": "mcp-servers",
+          "line": 35
+        },
+        {
+          "level": 3,
+          "text": "Dataverse MCP",
+          "anchor": "dataverse-mcp",
+          "line": 51
+        },
+        {
+          "level": 3,
+          "text": "Copilot Studio MCP",
+          "anchor": "copilot-studio-mcp",
+          "line": 80
+        },
+        {
+          "level": 3,
+          "text": "The `servers` vs `mcpServers` trap",
+          "anchor": "the-servers-vs-mcpservers-trap",
+          "line": 106
+        },
+        {
+          "level": 2,
+          "text": "Repo configuration",
+          "anchor": "repo-configuration",
+          "line": 128
+        },
+        {
+          "level": 2,
+          "text": "Sources",
+          "anchor": "sources",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "docs/README.md",
+      "dir": "docs",
+      "title": "Documentation",
+      "description": "Glossary, API reference, how-to guides, and the scope statement: the explanatory half of the knowledge base",
+      "type": "index",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 0,
+      "sections": [],
+      "headings": []
+    },
+    {
+      "path": "docs/choosing-app-type.md",
+      "dir": "docs",
+      "title": "Choosing an App Type",
+      "description": "Decision guide for picking between canvas apps, model-driven apps, and Code Apps, with maker notes for each",
+      "type": "guide",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "canvas-apps",
+        "model-driven-apps",
+        "code-apps",
+        "dataverse",
+        "ui"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 4,
+      "sections": [
+        {
+          "anchor": "model-driven-app-notes",
+          "heading": "Model-driven app notes",
+          "start_line": 25,
+          "end_line": 33,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-notes",
+          "heading": "Dataverse notes",
+          "start_line": 34,
+          "end_line": 41,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 42,
+          "end_line": 47,
+          "subsections": []
+        },
+        {
+          "anchor": "reference",
+          "heading": "Reference",
+          "start_line": 48,
+          "end_line": 52,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Model-driven app notes",
+          "anchor": "model-driven-app-notes",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Dataverse notes",
+          "anchor": "dataverse-notes",
+          "line": 34
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 42
+        },
+        {
+          "level": 2,
+          "text": "Reference",
+          "anchor": "reference",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "docs/choosing-component.md",
+      "dir": "docs",
+      "title": "Choosing Where Logic Lives",
+      "description": "Decision guide for implementing business logic in Dataverse: business rule, calculated or rollup column, low-code plug-in, JavaScript, command, cloud flow, or C# plug-in",
+      "type": "guide",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "business-rules",
+        "plugins",
+        "javascript",
+        "power-automate",
+        "calculated-columns",
+        "rollup",
+        "power-fx",
+        "custom-api",
+        "decision"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 9,
+      "sections": [
+        {
+          "anchor": "the-question-that-decides-it",
+          "heading": "The question that decides it",
+          "start_line": 17,
+          "end_line": 32,
+          "subsections": []
+        },
+        {
+          "anchor": "three-places-logic-can-run",
+          "heading": "Three places logic can run",
+          "start_line": 33,
+          "end_line": 44,
+          "subsections": []
+        },
+        {
+          "anchor": "comparison",
+          "heading": "Comparison",
+          "start_line": 45,
+          "end_line": 102,
+          "subsections": []
+        },
+        {
+          "anchor": "one-warning-you-need-before-trusting-that-table",
+          "heading": "One warning you need before trusting that table",
+          "start_line": 103,
+          "end_line": 119,
+          "subsections": []
+        },
+        {
+          "anchor": "picking-one",
+          "heading": "Picking one",
+          "start_line": 120,
+          "end_line": 153,
+          "subsections": []
+        },
+        {
+          "anchor": "the-traps",
+          "heading": "The traps",
+          "start_line": 154,
+          "end_line": 174,
+          "subsections": []
+        },
+        {
+          "anchor": "testability",
+          "heading": "Testability",
+          "start_line": 175,
+          "end_line": 190,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 191,
+          "end_line": 197,
+          "subsections": []
+        },
+        {
+          "anchor": "sources",
+          "heading": "Sources",
+          "start_line": 198,
+          "end_line": 205,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "The question that decides it",
+          "anchor": "the-question-that-decides-it",
+          "line": 17
+        },
+        {
+          "level": 2,
+          "text": "Three places logic can run",
+          "anchor": "three-places-logic-can-run",
+          "line": 33
+        },
+        {
+          "level": 2,
+          "text": "Comparison",
+          "anchor": "comparison",
+          "line": 45
+        },
+        {
+          "level": 2,
+          "text": "One warning you need before trusting that table",
+          "anchor": "one-warning-you-need-before-trusting-that-table",
+          "line": 103
+        },
+        {
+          "level": 2,
+          "text": "Picking one",
+          "anchor": "picking-one",
+          "line": 120
+        },
+        {
+          "level": 2,
+          "text": "The traps",
+          "anchor": "the-traps",
+          "line": 154
+        },
+        {
+          "level": 2,
+          "text": "Testability",
+          "anchor": "testability",
+          "line": 175
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 191
+        },
+        {
+          "level": 2,
+          "text": "Sources",
+          "anchor": "sources",
+          "line": 198
+        }
+      ]
+    },
+    {
+      "path": "docs/coverage.md",
+      "dir": "docs",
+      "title": "Coverage and Non-Goals",
+      "description": "What this knowledge base covers, what it deliberately does not, and what to do when it has no answer",
+      "type": "reference",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "scope",
+        "coverage",
+        "out-of-scope",
+        "gaps",
+        "routing"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "in-scope",
+          "heading": "In scope",
+          "start_line": 12,
+          "end_line": 23,
+          "subsections": []
+        },
+        {
+          "anchor": "out-of-scope",
+          "heading": "Out of scope",
+          "start_line": 24,
+          "end_line": 41,
+          "subsections": []
+        },
+        {
+          "anchor": "known-gaps",
+          "heading": "Known gaps",
+          "start_line": 42,
+          "end_line": 57,
+          "subsections": []
+        },
+        {
+          "anchor": "if-this-knowledge-base-has-no-answer",
+          "heading": "If this knowledge base has no answer",
+          "start_line": 58,
+          "end_line": 67,
+          "subsections": []
+        },
+        {
+          "anchor": "how-coverage-is-tracked",
+          "heading": "How coverage is tracked",
+          "start_line": 68,
+          "end_line": 73,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "In scope",
+          "anchor": "in-scope",
+          "line": 12
+        },
+        {
+          "level": 2,
+          "text": "Out of scope",
+          "anchor": "out-of-scope",
+          "line": 24
+        },
+        {
+          "level": 2,
+          "text": "Known gaps",
+          "anchor": "known-gaps",
+          "line": 42
+        },
+        {
+          "level": 2,
+          "text": "If this knowledge base has no answer",
+          "anchor": "if-this-knowledge-base-has-no-answer",
+          "line": 58
+        },
+        {
+          "level": 2,
+          "text": "How coverage is tracked",
+          "anchor": "how-coverage-is-tracked",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "docs/environment-setup.md",
+      "dir": "docs",
+      "title": "Environment Setup",
+      "description": "How to provision an environment chain and hand it over ready to build in, plus repeatable data movement",
+      "type": "guide",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "environments",
+        "provisioning",
+        "security-groups",
+        "data",
+        "settings",
+        "checklist"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 9,
+      "sections": [
+        {
+          "anchor": "1-agree-the-shape",
+          "heading": "1. Agree the shape",
+          "start_line": 13,
+          "end_line": 20,
+          "subsections": []
+        },
+        {
+          "anchor": "2-build-the-access-model-first",
+          "heading": "2. Build the access model first",
+          "start_line": 21,
+          "end_line": 29,
+          "subsections": []
+        },
+        {
+          "anchor": "3-create-the-environments",
+          "heading": "3. Create the environments",
+          "start_line": 30,
+          "end_line": 37,
+          "subsections": []
+        },
+        {
+          "anchor": "4-configure-settings",
+          "heading": "4. Configure settings",
+          "start_line": 38,
+          "end_line": 55,
+          "subsections": []
+        },
+        {
+          "anchor": "5-hand-over",
+          "heading": "5. Hand over",
+          "start_line": 56,
+          "end_line": 63,
+          "subsections": []
+        },
+        {
+          "anchor": "6-start-building",
+          "heading": "6. Start building",
+          "start_line": 64,
+          "end_line": 70,
+          "subsections": []
+        },
+        {
+          "anchor": "binding-configuration-per-environment",
+          "heading": "Binding configuration per environment",
+          "start_line": 71,
+          "end_line": 103,
+          "subsections": []
+        },
+        {
+          "anchor": "moving-data-between-environments",
+          "heading": "Moving data between environments",
+          "start_line": 104,
+          "end_line": 116,
+          "subsections": []
+        },
+        {
+          "anchor": "before-release",
+          "heading": "Before release",
+          "start_line": 117,
+          "end_line": 123,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "1. Agree the shape",
+          "anchor": "1-agree-the-shape",
+          "line": 13
+        },
+        {
+          "level": 2,
+          "text": "2. Build the access model first",
+          "anchor": "2-build-the-access-model-first",
+          "line": 21
+        },
+        {
+          "level": 2,
+          "text": "3. Create the environments",
+          "anchor": "3-create-the-environments",
+          "line": 30
+        },
+        {
+          "level": 2,
+          "text": "4. Configure settings",
+          "anchor": "4-configure-settings",
+          "line": 38
+        },
+        {
+          "level": 2,
+          "text": "5. Hand over",
+          "anchor": "5-hand-over",
+          "line": 56
+        },
+        {
+          "level": 2,
+          "text": "6. Start building",
+          "anchor": "6-start-building",
+          "line": 64
+        },
+        {
+          "level": 2,
+          "text": "Binding configuration per environment",
+          "anchor": "binding-configuration-per-environment",
+          "line": 71
+        },
+        {
+          "level": 2,
+          "text": "Moving data between environments",
+          "anchor": "moving-data-between-environments",
+          "line": 104
+        },
+        {
+          "level": 2,
+          "text": "Before release",
+          "anchor": "before-release",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "path": "docs/glossary.md",
+      "dir": "docs",
+      "title": "Glossary",
+      "description": "Shared terminology for Power Platform work: ALM, solutions, Dataverse, security, DLP, and governance terms",
+      "type": "reference",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "glossary",
+        "terminology",
+        "alm",
+        "dataverse",
+        "dlp",
+        "governance",
+        "security"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 0,
+      "sections": [],
+      "headings": []
+    },
+    {
+      "path": "docs/power-platform-apis.md",
+      "dir": "docs",
+      "title": "Power Platform APIs",
+      "description": "Which API to call for what, and how each one authenticates",
+      "type": "reference",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "apis",
+        "power-platform-api",
+        "dataverse-web-api",
+        "spn",
+        "auth",
+        "automation"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "power-platform-api",
+          "heading": "Power Platform API",
+          "start_line": 17,
+          "end_line": 25,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-web-api",
+          "heading": "Dataverse Web API",
+          "start_line": 26,
+          "end_line": 34,
+          "subsections": []
+        },
+        {
+          "anchor": "practical-notes",
+          "heading": "Practical notes",
+          "start_line": 35,
+          "end_line": 47,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 48,
+          "end_line": 53,
+          "subsections": []
+        },
+        {
+          "anchor": "reference",
+          "heading": "Reference",
+          "start_line": 54,
+          "end_line": 60,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Power Platform API",
+          "anchor": "power-platform-api",
+          "line": 17
+        },
+        {
+          "level": 2,
+          "text": "Dataverse Web API",
+          "anchor": "dataverse-web-api",
+          "line": 26
+        },
+        {
+          "level": 2,
+          "text": "Practical notes",
+          "anchor": "practical-notes",
+          "line": 35
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 48
+        },
+        {
+          "level": 2,
+          "text": "Reference",
+          "anchor": "reference",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "path": "docs/testing.md",
+      "dir": "docs",
+      "title": "Testing",
+      "description": "How to test Power Platform work: what each level covers, where evidence lives, and how to test things that resist automation",
+      "type": "guide",
+      "primitive": null,
+      "status": null,
+      "tags": [
+        "testing",
+        "smoke",
+        "regression",
+        "playwright",
+        "uat",
+        "evidence",
+        "plugins"
+      ],
+      "last_reviewed": "2026-10-23",
+      "section_count": 7,
+      "sections": [
+        {
+          "anchor": "what-each-level-covers",
+          "heading": "What each level covers",
+          "start_line": 13,
+          "end_line": 24,
+          "subsections": []
+        },
+        {
+          "anchor": "the-data-boundary-check",
+          "heading": "The data boundary check",
+          "start_line": 25,
+          "end_line": 37,
+          "subsections": []
+        },
+        {
+          "anchor": "testing-each-mechanism",
+          "heading": "Testing each mechanism",
+          "start_line": 38,
+          "end_line": 66,
+          "subsections": []
+        },
+        {
+          "anchor": "end-to-end-tests",
+          "heading": "End-to-end tests",
+          "start_line": 67,
+          "end_line": 80,
+          "subsections": []
+        },
+        {
+          "anchor": "evidence",
+          "heading": "Evidence",
+          "start_line": 81,
+          "end_line": 92,
+          "subsections": []
+        },
+        {
+          "anchor": "who-tests",
+          "heading": "Who tests",
+          "start_line": 93,
+          "end_line": 98,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 99,
+          "end_line": 104,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "What each level covers",
+          "anchor": "what-each-level-covers",
+          "line": 13
+        },
+        {
+          "level": 2,
+          "text": "The data boundary check",
+          "anchor": "the-data-boundary-check",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Testing each mechanism",
+          "anchor": "testing-each-mechanism",
+          "line": 38
+        },
+        {
+          "level": 2,
+          "text": "End-to-end tests",
+          "anchor": "end-to-end-tests",
+          "line": 67
+        },
+        {
+          "level": 2,
+          "text": "Evidence",
+          "anchor": "evidence",
+          "line": 81
+        },
+        {
+          "level": 2,
+          "text": "Who tests",
+          "anchor": "who-tests",
+          "line": 93
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "maintenance/README.md",
+      "dir": "maintenance",
+      "title": "Maintenance",
+      "description": "Repo upkeep: the validation scripts and the rules for changing the knowledge base structure",
+      "type": "meta",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "using-this-as-a-template",
+          "heading": "Using this as a template",
+          "start_line": 10,
+          "end_line": 14,
+          "subsections": []
+        },
+        {
+          "anchor": "scripts",
+          "heading": "Scripts",
+          "start_line": 15,
+          "end_line": 35,
+          "subsections": []
+        },
+        {
+          "anchor": "why-the-scripts-live-here",
+          "heading": "Why the scripts live here",
+          "start_line": 36,
+          "end_line": 43,
+          "subsections": []
+        },
+        {
+          "anchor": "structure-rules",
+          "heading": "Structure rules",
+          "start_line": 44,
+          "end_line": 55,
+          "subsections": []
+        },
+        {
+          "anchor": "adding-a-folder",
+          "heading": "Adding a folder",
+          "start_line": 56,
+          "end_line": 64,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Using this as a template",
+          "anchor": "using-this-as-a-template",
+          "line": 10
+        },
+        {
+          "level": 2,
+          "text": "Scripts",
+          "anchor": "scripts",
+          "line": 15
+        },
+        {
+          "level": 2,
+          "text": "Why the scripts live here",
+          "anchor": "why-the-scripts-live-here",
+          "line": 36
+        },
+        {
+          "level": 2,
+          "text": "Structure rules",
+          "anchor": "structure-rules",
+          "line": 44
+        },
+        {
+          "level": 2,
+          "text": "Adding a folder",
+          "anchor": "adding-a-folder",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "maintenance/using-as-a-template.md",
+      "dir": "maintenance",
+      "title": "Using This as a Template",
+      "description": "What to reuse when starting a new knowledge base from this one, what to replace, and what will break if you copy blindly",
+      "type": "meta",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 6,
+      "sections": [
+        {
+          "anchor": "the-portable-machinery",
+          "heading": "The portable machinery",
+          "start_line": 13,
+          "end_line": 29,
+          "subsections": []
+        },
+        {
+          "anchor": "the-portable-house-rules",
+          "heading": "The portable house rules",
+          "start_line": 30,
+          "end_line": 46,
+          "subsections": []
+        },
+        {
+          "anchor": "what-to-replace",
+          "heading": "What to replace",
+          "start_line": 47,
+          "end_line": 58,
+          "subsections": []
+        },
+        {
+          "anchor": "starting-a-new-one",
+          "heading": "Starting a new one",
+          "start_line": 59,
+          "end_line": 79,
+          "subsections": []
+        },
+        {
+          "anchor": "what-the-machinery-cannot-tell-you",
+          "heading": "What the machinery cannot tell you",
+          "start_line": 80,
+          "end_line": 90,
+          "subsections": []
+        },
+        {
+          "anchor": "a-worked-example",
+          "heading": "A worked example",
+          "start_line": 91,
+          "end_line": 110,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "The portable machinery",
+          "anchor": "the-portable-machinery",
+          "line": 13
+        },
+        {
+          "level": 2,
+          "text": "The portable house rules",
+          "anchor": "the-portable-house-rules",
+          "line": 30
+        },
+        {
+          "level": 2,
+          "text": "What to replace",
+          "anchor": "what-to-replace",
+          "line": 47
+        },
+        {
+          "level": 2,
+          "text": "Starting a new one",
+          "anchor": "starting-a-new-one",
+          "line": 59
+        },
+        {
+          "level": 2,
+          "text": "What the machinery cannot tell you",
+          "anchor": "what-the-machinery-cannot-tell-you",
+          "line": 80
+        },
+        {
+          "level": 2,
+          "text": "A worked example",
+          "anchor": "a-worked-example",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "path": "packages/README.md",
+      "dir": "packages",
+      "title": "APM Packages",
+      "description": "Installable packages that carry this guidance and review behaviour into any Power Platform project",
+      "type": "index",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "the-packages",
+          "heading": "The packages",
+          "start_line": 15,
+          "end_line": 25,
+          "subsections": []
+        },
+        {
+          "anchor": "install",
+          "heading": "Install",
+          "start_line": 26,
+          "end_line": 53,
+          "subsections": []
+        },
+        {
+          "anchor": "authoring-and-validating",
+          "heading": "Authoring and validating",
+          "start_line": 54,
+          "end_line": 72,
+          "subsections": []
+        },
+        {
+          "anchor": "layout-rules-that-are-easy-to-get-wrong",
+          "heading": "Layout rules that are easy to get wrong",
+          "start_line": 73,
+          "end_line": 83,
+          "subsections": []
+        },
+        {
+          "anchor": "versioning",
+          "heading": "Versioning",
+          "start_line": 84,
+          "end_line": 88,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "APM packages",
+          "anchor": "apm-packages",
+          "line": 7
+        },
+        {
+          "level": 2,
+          "text": "The packages",
+          "anchor": "the-packages",
+          "line": 15
+        },
+        {
+          "level": 2,
+          "text": "Install",
+          "anchor": "install",
+          "line": 26
+        },
+        {
+          "level": 2,
+          "text": "Authoring and validating",
+          "anchor": "authoring-and-validating",
+          "line": 54
+        },
+        {
+          "level": 2,
+          "text": "Layout rules that are easy to get wrong",
+          "anchor": "layout-rules-that-are-easy-to-get-wrong",
+          "line": 73
+        },
+        {
+          "level": 2,
+          "text": "Versioning",
+          "anchor": "versioning",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "packages/agent-authoring/.apm/instructions/agent-authoring.instructions.md",
+      "dir": "packages/agent-authoring/.apm/instructions",
+      "title": null,
+      "description": "Copilot Studio agent rules: authentication baseline, channel and sharing policy, data boundaries, transcripts, and release checks",
+      "type": null,
+      "primitive": "instruction",
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 8,
+      "sections": [
+        {
+          "anchor": "baseline-decisions-you-do-not-get-to-skip",
+          "heading": "Baseline decisions you do not get to skip",
+          "start_line": 11,
+          "end_line": 27,
+          "subsections": []
+        },
+        {
+          "anchor": "by-environment",
+          "heading": "By environment",
+          "start_line": 28,
+          "end_line": 37,
+          "subsections": []
+        },
+        {
+          "anchor": "data-boundaries",
+          "heading": "Data boundaries",
+          "start_line": 38,
+          "end_line": 46,
+          "subsections": []
+        },
+        {
+          "anchor": "generative-ai",
+          "heading": "Generative AI",
+          "start_line": 47,
+          "end_line": 53,
+          "subsections": []
+        },
+        {
+          "anchor": "transcripts",
+          "heading": "Transcripts",
+          "start_line": 54,
+          "end_line": 63,
+          "subsections": []
+        },
+        {
+          "anchor": "before-release",
+          "heading": "Before release",
+          "start_line": 64,
+          "end_line": 74,
+          "subsections": []
+        },
+        {
+          "anchor": "dataverse-for-teams",
+          "heading": "Dataverse for Teams",
+          "start_line": 75,
+          "end_line": 79,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 80,
+          "end_line": 84,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Building agents to ECDX practices",
+          "anchor": "building-agents-to-ecdx-practices",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "Baseline decisions you do not get to skip",
+          "anchor": "baseline-decisions-you-do-not-get-to-skip",
+          "line": 11
+        },
+        {
+          "level": 2,
+          "text": "By environment",
+          "anchor": "by-environment",
+          "line": 28
+        },
+        {
+          "level": 2,
+          "text": "Data boundaries",
+          "anchor": "data-boundaries",
+          "line": 38
+        },
+        {
+          "level": 2,
+          "text": "Generative AI",
+          "anchor": "generative-ai",
+          "line": 47
+        },
+        {
+          "level": 2,
+          "text": "Transcripts",
+          "anchor": "transcripts",
+          "line": 54
+        },
+        {
+          "level": 2,
+          "text": "Before release",
+          "anchor": "before-release",
+          "line": 64
+        },
+        {
+          "level": 2,
+          "text": "Dataverse for Teams",
+          "anchor": "dataverse-for-teams",
+          "line": 75
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "packages/agent-authoring/.apm/skills/review-agent-readiness/SKILL.md",
+      "dir": "packages/agent-authoring/.apm/skills/review-agent-readiness",
+      "title": null,
+      "description": "Use when an agent is about to be shared, published, or released, or when auditing agents already in use. Checks authentication, channels, sharing, knowledge sources, transcripts, and testing against the agent's target environment and data class. Activate for \"is this agent ready\", \"can I share this agent\", \"review my agent\", or \"audit our agents\".",
+      "type": null,
+      "primitive": "skill",
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 7,
+      "sections": [
+        {
+          "anchor": "1-establish-the-target-environment-and-data-class",
+          "heading": "1. Establish the target environment and data class",
+          "start_line": 10,
+          "end_line": 20,
+          "subsections": []
+        },
+        {
+          "anchor": "2-check-the-settings-that-cannot-be-wrong",
+          "heading": "2. Check the settings that cannot be wrong",
+          "start_line": 21,
+          "end_line": 32,
+          "subsections": []
+        },
+        {
+          "anchor": "3-check-the-data-path",
+          "heading": "3. Check the data path",
+          "start_line": 33,
+          "end_line": 40,
+          "subsections": []
+        },
+        {
+          "anchor": "4-check-testing",
+          "heading": "4. Check testing",
+          "start_line": 41,
+          "end_line": 45,
+          "subsections": []
+        },
+        {
+          "anchor": "5-check-release-mechanics",
+          "heading": "5. Check release mechanics",
+          "start_line": 46,
+          "end_line": 53,
+          "subsections": []
+        },
+        {
+          "anchor": "report",
+          "heading": "Report",
+          "start_line": 54,
+          "end_line": 67,
+          "subsections": []
+        },
+        {
+          "anchor": "what-not-to-do",
+          "heading": "What not to do",
+          "start_line": 68,
+          "end_line": 73,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Review agent readiness",
+          "anchor": "review-agent-readiness",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "1. Establish the target environment and data class",
+          "anchor": "1-establish-the-target-environment-and-data-class",
+          "line": 10
+        },
+        {
+          "level": 2,
+          "text": "2. Check the settings that cannot be wrong",
+          "anchor": "2-check-the-settings-that-cannot-be-wrong",
+          "line": 21
+        },
+        {
+          "level": 2,
+          "text": "3. Check the data path",
+          "anchor": "3-check-the-data-path",
+          "line": 33
+        },
+        {
+          "level": 2,
+          "text": "4. Check testing",
+          "anchor": "4-check-testing",
+          "line": 41
+        },
+        {
+          "level": 2,
+          "text": "5. Check release mechanics",
+          "anchor": "5-check-release-mechanics",
+          "line": 46
+        },
+        {
+          "level": 2,
+          "text": "Report",
+          "anchor": "report",
+          "line": 54
+        },
+        {
+          "level": 2,
+          "text": "What not to do",
+          "anchor": "what-not-to-do",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "packages/governance-review/.apm/instructions/governance-review.instructions.md",
+      "dir": "packages/governance-review/.apm/instructions",
+      "title": null,
+      "description": "Governance review posture: read-only by default, findings tied to the item they came from, evidence over opinion",
+      "type": null,
+      "primitive": "instruction",
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 6,
+      "sections": [
+        {
+          "anchor": "non-negotiables-for-a-review",
+          "heading": "Non-negotiables for a review",
+          "start_line": 10,
+          "end_line": 20,
+          "subsections": []
+        },
+        {
+          "anchor": "what-to-read-first",
+          "heading": "What to read first",
+          "start_line": 21,
+          "end_line": 30,
+          "subsections": []
+        },
+        {
+          "anchor": "the-findings-that-actually-matter",
+          "heading": "The findings that actually matter",
+          "start_line": 31,
+          "end_line": 45,
+          "subsections": []
+        },
+        {
+          "anchor": "how-to-phrase-a-finding",
+          "heading": "How to phrase a finding",
+          "start_line": 46,
+          "end_line": 56,
+          "subsections": []
+        },
+        {
+          "anchor": "what-not-to-do",
+          "heading": "What not to do",
+          "start_line": 57,
+          "end_line": 64,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 65,
+          "end_line": 69,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Reviewing Power Platform work",
+          "anchor": "reviewing-power-platform-work",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "Non-negotiables for a review",
+          "anchor": "non-negotiables-for-a-review",
+          "line": 10
+        },
+        {
+          "level": 2,
+          "text": "What to read first",
+          "anchor": "what-to-read-first",
+          "line": 21
+        },
+        {
+          "level": 2,
+          "text": "The findings that actually matter",
+          "anchor": "the-findings-that-actually-matter",
+          "line": 31
+        },
+        {
+          "level": 2,
+          "text": "How to phrase a finding",
+          "anchor": "how-to-phrase-a-finding",
+          "line": 46
+        },
+        {
+          "level": 2,
+          "text": "What not to do",
+          "anchor": "what-not-to-do",
+          "line": 57
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "path": "packages/governance-review/.apm/skills/review-security-and-dlp/SKILL.md",
+      "dir": "packages/governance-review/.apm/skills/review-security-and-dlp",
+      "title": null,
+      "description": "Use when reviewing access, identity, secrets, or connector policy on a Power Platform environment, or when answering \"who can reach this\", \"is this data exposed\", \"do we need a DLP exception\". Produces a security finding set for one environment or one solution, each tied to the item it came from. Activate for security review, DLP review, access audit, least-privilege check, or secret-handling question.",
+      "type": null,
+      "primitive": "skill",
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 6,
+      "sections": [
+        {
+          "anchor": "establish-the-environments-posture",
+          "heading": "Establish the environment's posture",
+          "start_line": 11,
+          "end_line": 26,
+          "subsections": []
+        },
+        {
+          "anchor": "the-five-layers",
+          "heading": "The five layers",
+          "start_line": 27,
+          "end_line": 41,
+          "subsections": []
+        },
+        {
+          "anchor": "dlp-specifics",
+          "heading": "DLP specifics",
+          "start_line": 42,
+          "end_line": 53,
+          "subsections": []
+        },
+        {
+          "anchor": "identity-and-ownership",
+          "heading": "Identity and ownership",
+          "start_line": 54,
+          "end_line": 65,
+          "subsections": []
+        },
+        {
+          "anchor": "secrets",
+          "heading": "Secrets",
+          "start_line": 66,
+          "end_line": 73,
+          "subsections": []
+        },
+        {
+          "anchor": "report",
+          "heading": "Report",
+          "start_line": 74,
+          "end_line": 94,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Review security and DLP",
+          "anchor": "review-security-and-dlp",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "Establish the environment's posture",
+          "anchor": "establish-the-environments-posture",
+          "line": 11
+        },
+        {
+          "level": 2,
+          "text": "The five layers",
+          "anchor": "the-five-layers",
+          "line": 27
+        },
+        {
+          "level": 2,
+          "text": "DLP specifics",
+          "anchor": "dlp-specifics",
+          "line": 42
+        },
+        {
+          "level": 2,
+          "text": "Identity and ownership",
+          "anchor": "identity-and-ownership",
+          "line": 54
+        },
+        {
+          "level": 2,
+          "text": "Secrets",
+          "anchor": "secrets",
+          "line": 66
+        },
+        {
+          "level": 2,
+          "text": "Report",
+          "anchor": "report",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "path": "packages/power-platform-practices/.apm/instructions/power-platform-practices.instructions.md",
+      "dir": "packages/power-platform-practices/.apm/instructions",
+      "title": null,
+      "description": "ECDX Power Platform practices: environments, ALM, naming, security and a release checklist",
+      "type": null,
+      "primitive": "instruction",
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "the-environment-sets-the-bar",
+          "heading": "The environment sets the bar",
+          "start_line": 11,
+          "end_line": 29,
+          "subsections": []
+        },
+        {
+          "anchor": "what-tends-to-work",
+          "heading": "What tends to work",
+          "start_line": 30,
+          "end_line": 54,
+          "subsections": []
+        },
+        {
+          "anchor": "before-you-call-something-done",
+          "heading": "Before you call something done",
+          "start_line": 55,
+          "end_line": 69,
+          "subsections": []
+        },
+        {
+          "anchor": "silence-is-not-permission",
+          "heading": "Silence is not permission",
+          "start_line": 70,
+          "end_line": 74,
+          "subsections": []
+        },
+        {
+          "anchor": "where-the-detail-lives",
+          "heading": "Where the detail lives",
+          "start_line": 75,
+          "end_line": 88,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "ECDX Power Platform practices",
+          "anchor": "ecdx-power-platform-practices",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "The environment sets the bar",
+          "anchor": "the-environment-sets-the-bar",
+          "line": 11
+        },
+        {
+          "level": 2,
+          "text": "What tends to work",
+          "anchor": "what-tends-to-work",
+          "line": 30
+        },
+        {
+          "level": 2,
+          "text": "Before you call something done",
+          "anchor": "before-you-call-something-done",
+          "line": 55
+        },
+        {
+          "level": 2,
+          "text": "Silence is not permission",
+          "anchor": "silence-is-not-permission",
+          "line": 70
+        },
+        {
+          "level": 2,
+          "text": "Where the detail lives",
+          "anchor": "where-the-detail-lives",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "packages/power-platform-practices/.apm/skills/assess-change-risk/SKILL.md",
+      "dir": "packages/power-platform-practices/.apm/skills/assess-change-risk",
+      "title": null,
+      "description": "Use when planning a Power Platform change, or when an existing solution starts to matter more than it used to. Works out which environment it belongs in, what class of data it touches, and therefore which controls apply. Activate for \"what process applies\", \"how much ALM do we need\", \"can we skip documentation\", \"is this critical\", or before any Power Platform scaffolding.",
+      "type": null,
+      "primitive": "skill",
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "1-where-does-it-run",
+          "heading": "1. Where does it run?",
+          "start_line": 11,
+          "end_line": 24,
+          "subsections": []
+        },
+        {
+          "anchor": "2-what-does-it-touch",
+          "heading": "2. What does it touch?",
+          "start_line": 25,
+          "end_line": 35,
+          "subsections": []
+        },
+        {
+          "anchor": "3-is-it-a-core-business-process",
+          "heading": "3. Is it a core business process?",
+          "start_line": 36,
+          "end_line": 48,
+          "subsections": []
+        },
+        {
+          "anchor": "4-state-the-consequences",
+          "heading": "4. State the consequences",
+          "start_line": 49,
+          "end_line": 64,
+          "subsections": []
+        },
+        {
+          "anchor": "growing-into-the-bar",
+          "heading": "Growing into the bar",
+          "start_line": 65,
+          "end_line": 75,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Assess change risk",
+          "anchor": "assess-change-risk",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "1. Where does it run?",
+          "anchor": "1-where-does-it-run",
+          "line": 11
+        },
+        {
+          "level": 2,
+          "text": "2. What does it touch?",
+          "anchor": "2-what-does-it-touch",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "3. Is it a core business process?",
+          "anchor": "3-is-it-a-core-business-process",
+          "line": 36
+        },
+        {
+          "level": 2,
+          "text": "4. State the consequences",
+          "anchor": "4-state-the-consequences",
+          "line": 49
+        },
+        {
+          "level": 2,
+          "text": "Growing into the bar",
+          "anchor": "growing-into-the-bar",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "path": "packages/power-platform-practices/.apm/skills/walk-release-checklist/SKILL.md",
+      "dir": "packages/power-platform-practices/.apm/skills/walk-release-checklist",
+      "title": null,
+      "description": "Use before releasing a Power Platform solution, when auditing one already in production, or when reviewing someone else's work. Walks the ECDX release checklist that applies to the target environment and criticality, reporting what you found and what it would cost. Activate for \"is this ready to ship\", \"review this solution\", \"what is missing before release\", \"run the checklist\", or \"audit this environment\".",
+      "type": null,
+      "primitive": "skill",
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 4,
+      "sections": [
+        {
+          "anchor": "establish-scope-first",
+          "heading": "Establish scope first",
+          "start_line": 13,
+          "end_line": 28,
+          "subsections": []
+        },
+        {
+          "anchor": "the-checks",
+          "heading": "The checks",
+          "start_line": 29,
+          "end_line": 91,
+          "subsections": []
+        },
+        {
+          "anchor": "how-to-check-not-guess",
+          "heading": "How to check, not guess",
+          "start_line": 92,
+          "end_line": 103,
+          "subsections": []
+        },
+        {
+          "anchor": "report",
+          "heading": "Report",
+          "start_line": 104,
+          "end_line": 116,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Walk the release checklist",
+          "anchor": "walk-the-release-checklist",
+          "line": 6
+        },
+        {
+          "level": 2,
+          "text": "Establish scope first",
+          "anchor": "establish-scope-first",
+          "line": 13
+        },
+        {
+          "level": 2,
+          "text": "The checks",
+          "anchor": "the-checks",
+          "line": 29
+        },
+        {
+          "level": 2,
+          "text": "How to check, not guess",
+          "anchor": "how-to-check-not-guess",
+          "line": 92
+        },
+        {
+          "level": 2,
+          "text": "Report",
+          "anchor": "report",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "path": "templates/README.md",
+      "dir": "templates",
+      "title": "Templates",
+      "description": "Boilerplate for new work: the project scaffold and the release pipeline",
+      "type": "index",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 1,
+      "sections": [
+        {
+          "anchor": "rules",
+          "heading": "Rules",
+          "start_line": 19,
+          "end_line": 25,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Rules",
+          "anchor": "rules",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "templates/pipelines/README.md",
+      "dir": "templates/pipelines",
+      "title": "Pipeline Template",
+      "description": "Azure DevOps pipeline for Power Platform solution deployment using Power Platform Build Tools and SPN service connections",
+      "type": "template",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 4,
+      "sections": [
+        {
+          "anchor": "setup-per-project",
+          "heading": "Setup per project",
+          "start_line": 15,
+          "end_line": 24,
+          "subsections": []
+        },
+        {
+          "anchor": "what-this-pipeline-actually-deploys",
+          "heading": "What this pipeline actually deploys",
+          "start_line": 25,
+          "end_line": 43,
+          "subsections": []
+        },
+        {
+          "anchor": "rules",
+          "heading": "Rules",
+          "start_line": 44,
+          "end_line": 53,
+          "subsections": []
+        },
+        {
+          "anchor": "when-not-to-hand-roll-yaml",
+          "heading": "When not to hand-roll YAML",
+          "start_line": 54,
+          "end_line": 60,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Setup per project",
+          "anchor": "setup-per-project",
+          "line": 15
+        },
+        {
+          "level": 2,
+          "text": "What this pipeline actually deploys",
+          "anchor": "what-this-pipeline-actually-deploys",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Rules",
+          "anchor": "rules",
+          "line": 44
+        },
+        {
+          "level": 2,
+          "text": "When not to hand-roll YAML",
+          "anchor": "when-not-to-hand-roll-yaml",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "path": "templates/project/README.md",
+      "dir": "templates/project",
+      "title": "Project Template",
+      "description": "Starting layout for a new project repo, with README, PDD and SDD templates and a gitignore",
+      "type": "template",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 1,
+      "sections": [
+        {
+          "anchor": "steps",
+          "heading": "Steps",
+          "start_line": 22,
+          "end_line": 32,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Steps",
+          "anchor": "steps",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "templates/project/pdd-template.md",
+      "dir": "templates/project",
+      "title": "<Project Name> PDD",
+      "description": "Product design document template: the problem, the users, and what done means",
+      "type": "template",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 10,
+      "sections": [
+        {
+          "anchor": "problem",
+          "heading": "Problem",
+          "start_line": 14,
+          "end_line": 18,
+          "subsections": []
+        },
+        {
+          "anchor": "users-and-audience",
+          "heading": "Users and audience",
+          "start_line": 19,
+          "end_line": 24,
+          "subsections": []
+        },
+        {
+          "anchor": "data",
+          "heading": "Data",
+          "start_line": 25,
+          "end_line": 37,
+          "subsections": []
+        },
+        {
+          "anchor": "requirements",
+          "heading": "Requirements",
+          "start_line": 38,
+          "end_line": 49,
+          "subsections": []
+        },
+        {
+          "anchor": "acceptance-criteria",
+          "heading": "Acceptance criteria",
+          "start_line": 50,
+          "end_line": 58,
+          "subsections": []
+        },
+        {
+          "anchor": "criticality",
+          "heading": "Criticality",
+          "start_line": 59,
+          "end_line": 68,
+          "subsections": []
+        },
+        {
+          "anchor": "non-functional-requirements",
+          "heading": "Non-functional requirements",
+          "start_line": 69,
+          "end_line": 80,
+          "subsections": []
+        },
+        {
+          "anchor": "success-measure",
+          "heading": "Success measure",
+          "start_line": 81,
+          "end_line": 84,
+          "subsections": []
+        },
+        {
+          "anchor": "sign-off",
+          "heading": "Sign-off",
+          "start_line": 85,
+          "end_line": 91,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 92,
+          "end_line": 97,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "<Project Name> product design",
+          "anchor": "project-name-product-design",
+          "line": 7
+        },
+        {
+          "level": 2,
+          "text": "Problem",
+          "anchor": "problem",
+          "line": 14
+        },
+        {
+          "level": 2,
+          "text": "Users and audience",
+          "anchor": "users-and-audience",
+          "line": 19
+        },
+        {
+          "level": 2,
+          "text": "Data",
+          "anchor": "data",
+          "line": 25
+        },
+        {
+          "level": 2,
+          "text": "Requirements",
+          "anchor": "requirements",
+          "line": 38
+        },
+        {
+          "level": 2,
+          "text": "Acceptance criteria",
+          "anchor": "acceptance-criteria",
+          "line": 50
+        },
+        {
+          "level": 2,
+          "text": "Criticality",
+          "anchor": "criticality",
+          "line": 59
+        },
+        {
+          "level": 2,
+          "text": "Non-functional requirements",
+          "anchor": "non-functional-requirements",
+          "line": 69
+        },
+        {
+          "level": 2,
+          "text": "Success measure",
+          "anchor": "success-measure",
+          "line": 81
+        },
+        {
+          "level": 2,
+          "text": "Sign-off",
+          "anchor": "sign-off",
+          "line": 85
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "templates/project/readme-template.md",
+      "dir": "templates/project",
+      "title": "<Project Name>",
+      "description": "Project README template: copy and fill in every placeholder",
+      "type": "template",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 5,
+      "sections": [
+        {
+          "anchor": "contents",
+          "heading": "Contents",
+          "start_line": 17,
+          "end_line": 25,
+          "subsections": []
+        },
+        {
+          "anchor": "environments",
+          "heading": "Environments",
+          "start_line": 26,
+          "end_line": 33,
+          "subsections": []
+        },
+        {
+          "anchor": "getting-started",
+          "heading": "Getting started",
+          "start_line": 34,
+          "end_line": 39,
+          "subsections": []
+        },
+        {
+          "anchor": "operations",
+          "heading": "Operations",
+          "start_line": 40,
+          "end_line": 45,
+          "subsections": []
+        },
+        {
+          "anchor": "links",
+          "heading": "Links",
+          "start_line": 46,
+          "end_line": 51,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 2,
+          "text": "Contents",
+          "anchor": "contents",
+          "line": 17
+        },
+        {
+          "level": 2,
+          "text": "Environments",
+          "anchor": "environments",
+          "line": 26
+        },
+        {
+          "level": 2,
+          "text": "Getting started",
+          "anchor": "getting-started",
+          "line": 34
+        },
+        {
+          "level": 2,
+          "text": "Operations",
+          "anchor": "operations",
+          "line": 40
+        },
+        {
+          "level": 2,
+          "text": "Links",
+          "anchor": "links",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "templates/project/sdd-template.md",
+      "dir": "templates/project",
+      "title": "<Project Name> SDD",
+      "description": "Solution design document template: components, data model, security, environments, and how it is operated",
+      "type": "template",
+      "primitive": null,
+      "status": null,
+      "tags": null,
+      "last_reviewed": null,
+      "section_count": 11,
+      "sections": [
+        {
+          "anchor": "shape",
+          "heading": "Shape",
+          "start_line": 14,
+          "end_line": 23,
+          "subsections": []
+        },
+        {
+          "anchor": "components",
+          "heading": "Components",
+          "start_line": 24,
+          "end_line": 32,
+          "subsections": []
+        },
+        {
+          "anchor": "data-model",
+          "heading": "Data model",
+          "start_line": 33,
+          "end_line": 40,
+          "subsections": []
+        },
+        {
+          "anchor": "where-the-logic-lives",
+          "heading": "Where the logic lives",
+          "start_line": 41,
+          "end_line": 52,
+          "subsections": []
+        },
+        {
+          "anchor": "integrations",
+          "heading": "Integrations",
+          "start_line": 53,
+          "end_line": 61,
+          "subsections": []
+        },
+        {
+          "anchor": "security",
+          "heading": "Security",
+          "start_line": 62,
+          "end_line": 72,
+          "subsections": []
+        },
+        {
+          "anchor": "configuration",
+          "heading": "Configuration",
+          "start_line": 73,
+          "end_line": 80,
+          "subsections": []
+        },
+        {
+          "anchor": "failure-modes",
+          "heading": "Failure modes",
+          "start_line": 81,
+          "end_line": 89,
+          "subsections": []
+        },
+        {
+          "anchor": "how-it-is-tested",
+          "heading": "How it is tested",
+          "start_line": 90,
+          "end_line": 100,
+          "subsections": []
+        },
+        {
+          "anchor": "open-decisions",
+          "heading": "Open decisions",
+          "start_line": 101,
+          "end_line": 108,
+          "subsections": []
+        },
+        {
+          "anchor": "related",
+          "heading": "Related",
+          "start_line": 109,
+          "end_line": 114,
+          "subsections": []
+        }
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "<Project Name> solution design",
+          "anchor": "project-name-solution-design",
+          "line": 7
+        },
+        {
+          "level": 2,
+          "text": "Shape",
+          "anchor": "shape",
+          "line": 14
+        },
+        {
+          "level": 2,
+          "text": "Components",
+          "anchor": "components",
+          "line": 24
+        },
+        {
+          "level": 2,
+          "text": "Data model",
+          "anchor": "data-model",
+          "line": 33
+        },
+        {
+          "level": 2,
+          "text": "Where the logic lives",
+          "anchor": "where-the-logic-lives",
+          "line": 41
+        },
+        {
+          "level": 2,
+          "text": "Integrations",
+          "anchor": "integrations",
+          "line": 53
+        },
+        {
+          "level": 2,
+          "text": "Security",
+          "anchor": "security",
+          "line": 62
+        },
+        {
+          "level": 2,
+          "text": "Configuration",
+          "anchor": "configuration",
+          "line": 73
+        },
+        {
+          "level": 2,
+          "text": "Failure modes",
+          "anchor": "failure-modes",
+          "line": 81
+        },
+        {
+          "level": 2,
+          "text": "How it is tested",
+          "anchor": "how-it-is-tested",
+          "line": 90
+        },
+        {
+          "level": 2,
+          "text": "Open decisions",
+          "anchor": "open-decisions",
+          "line": 101
+        },
+        {
+          "level": 2,
+          "text": "Related",
+          "anchor": "related",
+          "line": 109
+        }
+      ]
+    }
+  ]
+}

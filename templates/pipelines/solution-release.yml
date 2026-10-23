@@ -1,0 +1,91 @@
+# Created by: <name> <YYYY-MM-DD>
+# Modified by: <name> <YYYY-MM-DD>
+#
+# Purpose: export the solution from dev, check it, then deploy it as managed to test or prod.
+# Test and prod deployments happen ONLY through this pipeline.
+# The prod stage requires an environment approval in Azure DevOps (separation of duty).
+# See best-practices/alm.md and templates/pipelines/README.md.
+trigger: none   # manual, or triggered by a CI artifact
+
+parameters:
+- name: environment
+  displayName: Target environment
+  type: string
+  values: [test, prod]
+
+variables:
+  # The only per-project knobs: solution name, dev environment URL, service connections.
+  SolutionName: 'contoso_MySolution'
+  DevEnvironmentUrl: 'https://{org}-fi-dev.crm4.dynamics.com'
+  ${{ if eq(parameters.environment, 'test') }}:
+    ServiceConnection: 'pp-test'
+  ${{ if eq(parameters.environment, 'prod') }}:
+    ServiceConnection: 'pp-prod'
+
+stages:
+- stage: Export
+  displayName: Export and check
+  jobs:
+  - job: Export
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    # Two exports on purpose: the unmanaged one is what gets checked and archived as source, the
+    # managed one is what gets deployed. An unmanaged zip cannot be imported as managed.
+    #
+    # This exports the live dev environment, so the repo is the record, not the build input. Anything
+    # present in dev but uncommitted will still ship. See templates/pipelines/README.md.
+    - task: PowerPlatformExportSolution@2
+      inputs:
+        PowerPlatformSPN: 'pp-dev'
+        SolutionName: '$(SolutionName)'
+        SolutionOutputFile: '$(Build.ArtifactStagingDirectory)/unmanaged/$(SolutionName).zip'
+        Managed: false
+        AsyncOperation: true
+        MaxAsyncWaitTime: '60'
+
+    # The task only fails when issues at the *exact* configured level exceed the threshold, so High is
+    # a floor rather than a complete check. Read the published report for anything at Medium too.
+    - task: PowerPlatformChecker@2
+      inputs:
+        PowerPlatformSPN: 'pp-dev'
+        FilesToAnalyze: '$(Build.ArtifactStagingDirectory)/unmanaged/$(SolutionName).zip'
+        RuleSet: '0ad12346-e108-40b8-a956-9a8f95ea18c9'   # Solution Checker
+        ErrorLevel: 'High'
+        ErrorThreshold: 0
+
+    - task: PowerPlatformExportSolution@2
+      inputs:
+        PowerPlatformSPN: 'pp-dev'
+        SolutionName: '$(SolutionName)'
+        SolutionOutputFile: '$(Build.ArtifactStagingDirectory)/managed/$(SolutionName).zip'
+        Managed: true
+        AsyncOperation: true
+        MaxAsyncWaitTime: '60'
+
+    - publish: '$(Build.ArtifactStagingDirectory)'
+      artifact: solution
+
+- stage: Deploy${{ parameters.environment }}
+  displayName: Deploy to ${{ parameters.environment }}
+  jobs:
+  - deployment: Import
+    pool:
+      vmImage: ubuntu-latest
+    environment: ${{ parameters.environment }}   # approval gate lives here
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: PowerPlatformImportSolution@2
+            inputs:
+              PowerPlatformSPN: '${{ variables.ServiceConnection }}'
+              SolutionInputFile: '$(Pipeline.Workspace)/solution/managed/$(SolutionName).zip'
+              Managed: true   # managed everywhere except dev (see best-practices/alm.md)
+              AsyncOperation: true
+              MaxAsyncWaitTime: '60'
+
+          # Explicit, so a failed import is never mistaken for a failed publish.
+          - task: PowerPlatformPublishCustomizations@2
+            inputs:
+              PowerPlatformSPN: '${{ variables.ServiceConnection }}'

@@ -1,0 +1,20 @@
+name: power-platform-practices
+version: 0.1.0
+description: ECDX best practices for Power Platform work — tier model, naming, ALM, security, and the pre-ship quality gates
+author: ECDX platform team
+license: MIT
+
+targets:
+  - copilot
+  - claude
+
+includes: auto
+
+dependencies:
+  mcp:
+    # Remote, no authentication, no local process: safe to declare for everyone.
+    # It grounds answers in current Microsoft documentation instead of model recall.
+    - name: microsoft-learn
+      registry: false
+      transport: http
+      url: https://learn.microsoft.com/api/mcp

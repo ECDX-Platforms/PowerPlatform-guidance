@@ -1,0 +1,17 @@
+# Build output. Never commit these.
+bin/
+obj/
+dist/
+build/
+node_modules/
+
+# Local configuration and secrets
+.env
+.env.*
+*.user
+*.suo
+.vscode/settings.json
+
+# Solution export staging: commit the export, not the scratch copies
+*.zip.tmp
+staging/
